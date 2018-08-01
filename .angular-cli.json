@@ -20,6 +20,7 @@
       "prefix": "app",
       "styles": [
         "../node_modules/bootstrap/scss/bootstrap.scss",
+        "../node_modules/element-angular/theme/index.css",
         "assets/fonts/HelveticaNeue/stylesheet.css",
         "assets/fonts/icomoon/icomoon.css",
         "scss/styles.scss"
