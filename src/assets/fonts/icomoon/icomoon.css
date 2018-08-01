@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('./icomoon.eot?t2rpgf');
+  src:  url('./icomoon.eot?t2rpgf#iefix') format('embedded-opentype'),
+    url('./icomoon.ttf?t2rpgf') format('truetype'),
+    url('./icomoon.woff?t2rpgf') format('woff'),
+    url('./icomoon.svg?t2rpgf#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gallery:before {
+  content: "\e901";
+}
+.icon-home:before {
+  content: "\e900";
+}
+.icon-analytics:before {
+  content: "\e902";
+}
+.icon-calendar:before {
+  content: "\e903";
+}
+.icon-clipboards:before {
+  content: "\e904";
+}
+.icon-clipboards-2:before {
+  content: "\e905";
+}
+.icon-clipboards-3:before {
+  content: "\e906";
+}
+.icon-clipboards-4:before {
+  content: "\e907";
+}
+.icon-contacts-book:before {
+  content: "\e908";
+}
+.icon-map:before {
+  content: "\e909";
+}
+.icon-notifications:before {
+  content: "\e90a";
+}
+.icon-office-worker:before {
+  content: "\e90b";
+}
+.icon-pills:before {
+  content: "\e90c";
+}
+.icon-settings-work-tool:before {
+  content: "\e90d";
+}
+.icon-sun-umbrella:before {
+  content: "\e90e";
+}

@@ -1,0 +1,16 @@
+.bg-image-container {
+  position: relative;
+  background-color: $white;
+  background-size: cover;
+  background-position: center;
+  &.square {
+    width: 100%;
+    padding-bottom: 100%;
+  }
+  &.circle {
+    border-radius: 50%;
+  }
+  &.rounded {
+    border-radius: 5px;
+  }
+}
