@@ -1,0 +1,11 @@
+@import "../../../scss/1-abstracts/index";
+
+div {
+  display: inline-block;
+  font-size: inherit;
+  i {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 1.1em;
+  }
+}
