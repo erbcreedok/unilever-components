@@ -1,0 +1,33 @@
+@import "../../../scss/1-abstracts/variables";
+
+@mixin icon-theme($color) {
+  color: $color;
+  background-color: rgba($color,.3);
+  border: 1px solid rgba($color,.5);
+}
+
+:host {
+  display: inline-flex;
+}
+
+.icon-container {
+  width: 60px;
+  height: 60px;
+  line-height: 64px;
+  text-align: center;
+  font-size: 25px;
+  border-radius: 50%;
+  color: $blue-gray-2;
+  margin-right: 15px;
+  background-color: rgba($blue-gray-6,.3);
+  border: 1px solid rgba($blue-gray-5,.5);
+  :host.danger & {
+    @include icon-theme($red);
+  }
+  :host.warning & {
+    @include icon-theme($yellow);
+  }
+  :host.success & {
+    @include icon-theme($green);
+  }
+}

@@ -1,0 +1,33 @@
+.ngx-datatable {
+  width: 100%;
+  .datatable-body-row, .datatable-header {
+    min-height: 45px;
+    background-color: $white;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .datatable-scroll {
+    min-width: 100%;
+  }
+  .datatable-body-row, .datatable-row-wrapper {
+    min-width: 100%;
+  }
+  .datatable-header-cell-label {
+    color: $blue-gray-2;
+    font-weight: 500;
+    font-size: 1.4rem;
+  }
+  .datatable-body-row {
+    border-top: 1px solid $blue-gray-4;
+    &:hover {
+      background-color: $blue-gray-6;
+    }
+  }
+  .datatable-header-cell, .datatable-body-cell {
+    padding: 15px;
+    min-height: 100%;
+  }
+  .datatable-body-cell-label {
+    font-size: 1.2rem;
+  }
+}

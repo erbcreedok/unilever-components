@@ -1,0 +1,19 @@
+@import "../../../scss/1-abstracts/index";
+
+a {
+  color: $default;
+}
+
+
+.icon-circles {
+  .title {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .number {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin: 0;
+  }
+}
