@@ -86,7 +86,7 @@ export class TaskTableComponent implements OnInit {
         },
       ];
       this.loading = false;
-    }, 3000);
+    }, 1500);
   }
 
 }
