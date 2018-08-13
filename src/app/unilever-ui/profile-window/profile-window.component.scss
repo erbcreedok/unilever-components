@@ -4,6 +4,9 @@ a {
   color: $default;
 }
 
+:host {
+  display: block;
+}
 
 .icon-circles {
   .title {

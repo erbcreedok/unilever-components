@@ -8,6 +8,9 @@ import { UiButtonComponent } from './ui-button/ui-button.component';
 import { UiIconCircleComponent } from './ui-icon-circle/ui-icon-circle.component';
 import { ProfileWindowComponent } from './profile-window/profile-window.component';
 import { UiDropdownComponent } from './ui-dropdown/ui-dropdown.component';
+import { UiTaskStatusComponent } from './task-status/task-status.component';
+import { HelperComponent } from './helper/helper.component';
+import { ProfileBoxComponent } from './profile-box/profile-box.component';
 
 
 @NgModule({
@@ -16,13 +19,25 @@ import { UiDropdownComponent } from './ui-dropdown/ui-dropdown.component';
     BrowserAnimationsModule,
     ElModule.forRoot(),
   ],
-  declarations: [ProfileStatusComponent, UiButtonComponent, UiIconCircleComponent, ProfileWindowComponent, UiDropdownComponent],
+  declarations: [
+    ProfileStatusComponent,
+    UiButtonComponent,
+    UiIconCircleComponent,
+    ProfileWindowComponent,
+    UiDropdownComponent,
+    UiTaskStatusComponent,
+    HelperComponent,
+    ProfileBoxComponent
+  ],
   exports: [
     ProfileWindowComponent,
     ProfileStatusComponent,
     UiButtonComponent,
     UiIconCircleComponent,
-    UiDropdownComponent
+    UiDropdownComponent,
+    UiTaskStatusComponent,
+    HelperComponent,
+    ProfileBoxComponent
   ]
 })
 export class UnileverUiModule { }

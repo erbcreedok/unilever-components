@@ -1,4 +1,21 @@
 <ngx-datatable
+        class="fullscreen"
         [rows]="rows"
-        [columns]="columns">
+        [columns]="columns"
+        [scrollbarH]="true"
+        [rowHeight]="'auto'"
+        [el-loading]="loading"
+        [text]="'Загрузка данных'"
+>
+    <ng-template #typeTemplate ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row" let-group="group">
+        <ui-task-status [status]="value"></ui-task-status>
+    </ng-template>
+
+    <ng-template #statusTemplate ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row" let-group="group">
+        <ui-task-status [status]="value"></ui-task-status>
+    </ng-template>
+
+    <ng-template #actionTemplate ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row" let-group="group">
+        <div class="action"><span class="chevron">❯</span></div>
+    </ng-template>
 </ngx-datatable>

@@ -1,0 +1,21 @@
+<div *ngIf="status === 0; else inProcess" #ready class="bg-warning">
+  <span>НА ПРОВЕРКУ</span>
+</div>
+
+<ng-template #inProcess>
+  <div *ngIf="status === 1; else done" class="bg-red">
+    <span>В ПРОЦЕССЕ</span>
+  </div>
+</ng-template>
+
+<ng-template  #done>
+  <div *ngIf="status === 2; else none"class="bg-success">
+    <span>ВЫПОЛНЕНО</span>
+  </div>
+</ng-template>
+
+<ng-template #none>
+  <div class="bg-gray">
+    <span>НЕ УКАЗАН</span>
+  </div>
+</ng-template>

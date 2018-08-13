@@ -21,8 +21,9 @@ $red-light:   #f03354;
 $yellow:      #f0ad1c;
 $yellow-1:    #f7bf47;
 
-$green:       #02a785;
-$green-light: #45b854;
+$green:         #02a785;
+$green-light:   #45b854;
+$green-light-1: #4bc95c;
 $green-1:     rgba(2,167,133,.5);
 $green-2:     rgba(2,167,133,.3);
 
@@ -34,6 +35,8 @@ $default: $blue-gray-1;
 $active: $green-light;
 $info: $blue-light;
 $danger: $red-light;
+$success: $green;
+$warning: $yellow-1;
 
 
 

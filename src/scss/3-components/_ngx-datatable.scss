@@ -27,7 +27,39 @@
     padding: 15px;
     min-height: 100%;
   }
+  .datatable-header-cell {
+    transition: border .2s, box-shadow .2s;
+    position: relative;
+    z-index: 1;
+    &.resizeable {
+      border-left: 1px solid transparent;
+      border-right: 1px solid transparent;
+      &:hover {
+        border-color: rgba($blue-gray-4, .5);
+      }
+    }
+    &.dragging {
+      z-index: 2;
+      background-color: white;
+      box-shadow: 0 2px 2px 2px rgba($blue-gray, .1);
+    }
+  }
   .datatable-body-cell-label {
     font-size: 1.2rem;
+  }
+
+  .chevron {
+    color: $blue;
+    opacity: 0.3;
+    transition: .2s;
+  }
+  .datatable-body-row:hover .chevron {
+    opacity: 1;
+  }
+  .empty-row {
+    text-align: center;
+    padding: 30px 0;
+    height: auto;
+    font-weight: 500;
   }
 }

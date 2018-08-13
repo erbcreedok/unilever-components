@@ -16,6 +16,40 @@
 .color-danger {
   color: $danger;
 }
+.color-warning {
+  color: $warning;
+}
 .color-gray {
   color: $blue-gray-1;
+}
+.color-green {
+  color: $green
+}
+.color-red {
+  color: $red;
+}
+.color-headings {
+  color: $headings-color !important;
+}
+.bg-success {
+  background-color: $success !important;
+}
+.bg-warning {
+  background-color: $warning !important;
+}
+.bg-danger {
+  background-color: $danger !important;
+}
+.bg-red {
+  background-color: $red !important;
+}
+.bg-gray {
+  background-color: $blue-gray !important;
+}
+.bg-light-gray {
+  background-color: $light-gray !important;
+}
+
+.border-blue-gray {
+  border-color: $blue-gray-4 !important;
 }

@@ -1,0 +1,26 @@
+@import "../../../scss/1-abstracts/variables";
+
+:host {
+  background-color: #ffffff;
+  border-right: 1px solid $blue-gray-4;
+}
+.left-offset {
+  padding-left: 30px;
+}
+.nav {
+  li {
+    min-height: 35px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    color: $blue-gray-1;
+    transition: .2s;
+    i {
+      margin-right: 15px;
+      display: inline-block;
+    }
+  }
+  .active li, li:hover, li.hover {
+    background-color: $blue-gray-6;
+    color: $blue;
+  }
+}

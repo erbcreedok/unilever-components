@@ -14,3 +14,12 @@ h4 {
 p {
   font-size: 1.6rem;
 }
+
+.font-weight-500 {
+  font-weight: 500;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

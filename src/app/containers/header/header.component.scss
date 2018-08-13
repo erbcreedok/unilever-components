@@ -1,0 +1,8 @@
+@import "../../../scss/1-abstracts/variables";
+:host {
+  background-color: #fff;
+  border-bottom: 1px solid $blue-gray-4;
+}
+.right-offset {
+  padding-right: 40px;
+}
