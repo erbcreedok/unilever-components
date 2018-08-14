@@ -1,0 +1,16 @@
+.mat-tab-label, .mat-tab-link {
+  font-family: inherit;
+  color: $blue-gray-1;
+  font-weight: normal;
+  opacity: 1 !important;
+  padding: 0 !important;
+  margin: 0 20px !important;
+  min-width: 0 !important;
+  &.mat-tab-label-active {
+    color: $blue-dark;
+    font-weight: 500;
+  }
+}
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: $blue;
+}

@@ -20,7 +20,6 @@ export class TaskTableComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.actionTemplate);
     this.loading = true;
     this.columns = [
       { name: 'Тип задачи', prop: 'type', width: 200, cellClass: 'font-weight-500 color-headings' },

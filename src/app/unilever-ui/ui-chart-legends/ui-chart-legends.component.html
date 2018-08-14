@@ -1,0 +1,6 @@
+<ul style="padding: 0; list-style: none;" [ngClass]="{'d-flex': !vertical}">
+  <li *ngFor="let l of data" class="mr-4" [ngClass]="{'mb-3': vertical}">
+    <span class="circle d-inline-block" [ngStyle]="{backgroundColor: l.backgroundColor}" style="width: 10px; height: 10px; border-radius: 50%"></span>
+    {{ l.label }}
+  </li>
+</ul>

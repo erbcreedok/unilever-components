@@ -1,2 +1,11 @@
 <ui-profile-window class="box-bordered" style="margin-bottom: 40px"></ui-profile-window>
-<app-tasks></app-tasks>
+<div class="box pt-2 pb-4 mb-5 bordered">
+    <nav mat-tab-nav-bar>
+        <a mat-tab-link *ngFor="let link of links"
+           [routerLink]="link.link"
+           [active]="selectedPath === link.link"
+        > {{link.label}} </a>
+    </nav>
+</div>
+
+<router-outlet></router-outlet>

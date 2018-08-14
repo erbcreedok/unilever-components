@@ -6,6 +6,11 @@ import { CommonModule } from '@angular/common';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { TaskTableComponent } from './task-table/task-table.component';
 import { UnileverUiModule } from '../unilever-ui/unilever-ui.module';
+import { PromoactivitiesBarChartComponent } from './promoactivities-bar-chart/promoactivities-bar-chart.component';
+import { ChartjsModule } from '@ctrl/ngx-chartjs';
+import { PromoactivitiesDonutChartComponent } from './promoactivities-donut-chart/promoactivities-donut-chart.component';
+import { MaterialModule } from '../material/material.module';
+import { MAT_DATE_LOCALE } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -13,9 +18,22 @@ import { UnileverUiModule } from '../unilever-ui/unilever-ui.module';
     CommonModule,
     BrowserAnimationsModule,
     ElModule.forRoot(),
-    UnileverUiModule
+    ChartjsModule,
+    UnileverUiModule,
+    MaterialModule
   ],
-  declarations: [TaskTableComponent],
-  exports: [TaskTableComponent],
+  declarations: [
+    TaskTableComponent,
+    PromoactivitiesBarChartComponent,
+    PromoactivitiesDonutChartComponent
+  ],
+  exports: [
+    TaskTableComponent,
+    PromoactivitiesBarChartComponent,
+    PromoactivitiesDonutChartComponent
+  ],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'ru-RU'},
+  ]
 })
 export class ComponentsModule {}

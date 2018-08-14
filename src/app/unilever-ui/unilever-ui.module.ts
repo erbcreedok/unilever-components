@@ -11,6 +11,7 @@ import { UiDropdownComponent } from './ui-dropdown/ui-dropdown.component';
 import { UiTaskStatusComponent } from './task-status/task-status.component';
 import { HelperComponent } from './helper/helper.component';
 import { ProfileBoxComponent } from './profile-box/profile-box.component';
+import { UiChartLegendsComponent } from './ui-chart-legends/ui-chart-legends.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ProfileBoxComponent } from './profile-box/profile-box.component';
     UiDropdownComponent,
     UiTaskStatusComponent,
     HelperComponent,
-    ProfileBoxComponent
+    ProfileBoxComponent,
+    UiChartLegendsComponent
   ],
   exports: [
     ProfileWindowComponent,
@@ -37,7 +39,8 @@ import { ProfileBoxComponent } from './profile-box/profile-box.component';
     UiDropdownComponent,
     UiTaskStatusComponent,
     HelperComponent,
-    ProfileBoxComponent
+    ProfileBoxComponent,
+    UiChartLegendsComponent
   ]
 })
 export class UnileverUiModule { }

@@ -1,0 +1,15 @@
+<div class="chart-legend">
+  <ui-chart-legends [data]="data.datasets"></ui-chart-legends>
+</div>
+<div style="position: relative">
+  <div style="width: 100%; overflow: scroll;">
+    <div style="width: 1200px;">
+      <ngx-chartjs [data]="data" [legend]="legend" [options]="options" [height]="300" [width]="1200" type="bar"></ngx-chartjs>
+    </div>
+  </div>
+  <div style="width: 30px; overflow: hidden; position: absolute; top: 0; background-color: white">
+    <div style="width: 1200px;">
+      <ngx-chartjs [data]="data" [legend]="legend" [options]="options" [height]="300" [width]="1200" type="bar"></ngx-chartjs>
+    </div>
+  </div>
+</div>
