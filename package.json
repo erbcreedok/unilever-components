@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^6.1.2",
     "@angular/router": "^6.1.2",
     "@ctrl/ngx-chartjs": "^1.0.2",
+    "@fortawesome/fontawesome-free": "^5.2.0",
     "@swimlane/ngx-datatable": "^13.1.0",
     "ajv": "^6.5.2",
     "bootstrap": "^4.1.3",
