@@ -1,0 +1,30 @@
+.notification {
+  padding: 1rem 1.5rem;
+  border-bottom: solid 0.5px #e0e4e9;
+
+  .notification-calendar {
+    background: #eff3f6;
+
+    i {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+    }
+  }
+
+  button {
+    line-height: 1.2rem;
+    height: 2rem;
+    min-width: 6.2rem;
+    min-height: inherit;
+    color: #354052;
+    padding: 2.5px 0;
+    border-radius: 3px;
+    background-color: #eff3f6;
+
+    &:active {
+      background-color: rgba(#eff3f6, 0.3);
+    }
+  }
+}

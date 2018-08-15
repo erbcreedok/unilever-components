@@ -1,0 +1,70 @@
+<div class="new-task">
+  <el-form label-width="0" label-position="top">
+    <div class="new-task-top d-flex justify-content-between">
+      <h2 class="fw-400 mb-0 mt-1 pt-2">Новая задача</h2>
+      <button class="btn" type="button" name="button">Закрыть</button>
+    </div>
+
+    <div class="new-task-middle">
+      <div class="mb-4">
+        <label for="task-title">
+          Заголовок задачи<span class="color-red">*</span>
+        </label>
+        <el-input id="task-title" [model]="input" placeholder="Что необходимо сделать?"></el-input>
+        <el-form-item label="Заголовок задачи" [required]="true">
+          <el-input formControlName="mail"></el-input>
+        </el-form-item>
+      </div>
+
+      <div class="mt-2">
+        <label for="task-desc">
+          Описание задачи
+        </label>
+        <el-input id="task-desc" type="textarea"
+                  [autosize]="{ minRows: 3, maxRows: 6  }"
+                  maxlength=400;
+                  placeholder="Подробная информация о задаче"
+                  [model]="textarea3">
+        </el-input>
+      </div>
+
+      <hr>
+
+      <div class="d-inline-block w-50 pr-3">
+        <label for="task-desc" class="mt-2  ">
+          Дата начала
+        </label>
+        <el-date-picker class="w-100" (modelChange)="handle($event)"
+                        [format]="'dd/MM/yyyy'">
+        </el-date-picker>
+      </div>
+      <div class="d-inline-block w-50 pl-3">
+        <label for="task-desc" class="mt-2  ">
+          Крайний срок
+        </label>
+        <el-date-picker (modelChange)="handle($event)"
+                        [format]="'dd/MM/yyyy'">
+        </el-date-picker>
+      </div>
+
+      <div class="">
+        <label for="">Исполнитель</label>
+        <el-select [(model)]="value" placeholder="Выберите из списка сотрудников">
+          <el-option *ngFor="let item of [{value: '选项1',label: 'Курмашев Айдос' },
+            { value: '选项2', label: 'Калжан Бекжан' },
+            { value: '选项4', label: 'Курмашев Айдос' },
+            { value: '选项5', label: 'Курмашев Айдос' }]"
+                     [label]="item.label"
+                     [elDisabled]="item.elDisabled"
+                     [value]="item.value">
+          </el-option>
+        </el-select>
+      </div>
+
+    </div>
+
+    <div class="new-task-bottom">
+
+    </div>
+  </el-form>
+</div>

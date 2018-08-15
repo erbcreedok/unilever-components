@@ -1,3 +1,14 @@
-.btn, .btn:focus {
+.btn, .btn:focus, button, button:focus, .el-button {
   outline: none;
+  padding: 6px 20px;
+  min-height: 35px;
+}
+.el-button--success {
+  background-color: $green-light;
+  border-color: $green-light;
+  &:focus, &:hover {
+  background: $green-light-1;
+  border-color: $green-light-1;
+  color: #fff;
+}
 }

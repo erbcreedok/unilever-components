@@ -1,0 +1,40 @@
+.new-task {
+  width: 40rem;
+  background: #fff;
+  border: solid 1px #dfe2e5;
+
+  .new-task-top {
+    padding: 1.5rem 4rem;
+
+    button {
+      height: 35px;
+      color: #354052;
+      font-size: 1.4rem;
+      padding: 0.3rem 1.3rem 0;
+      font-weight: 500;
+      border-radius: 4px;
+      background-color: #fff;
+      border: solid 1px #ced0da;
+    }
+  }
+
+  .new-task-middle {
+    padding: 3rem 4rem 4rem;
+    border-top: solid 1px #dfe2e5;
+    border-bottom: solid 1px #dfe2e5;
+  }
+
+  label {
+    font-weight: 500;
+  }
+
+  hr {
+    margin: 3rem 0;
+    border-top: 2px solid #dfe2e5;
+  }
+}
+
+
+.el-date-editor.el-input, .el-date-editor.el-input__inner {
+  width: inherit;
+}

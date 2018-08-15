@@ -1,0 +1,10 @@
+:host {
+  display: inline-block;
+  color: white;
+  font-size: .9rem;
+  font-weight: 500;
+  & > div {
+    padding: 3px 7px 2px;
+    border-radius: 3px;
+  }
+}

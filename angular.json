@@ -33,7 +33,9 @@
               "src/assets/fonts/icomoon/icomoon.css",
               "src/scss/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/scripts/backdrop-filter-polyfill.js"
+            ]
           },
           "configurations": {
             "production": {
