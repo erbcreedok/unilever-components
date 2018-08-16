@@ -21,6 +21,8 @@ import { EmployeeViewComponent } from './views/employee-view/employee-view.compo
 import { EmployeeTasksViewComponent } from './containers/employee-tasks-view/employee-tasks-view.component';
 import { EmployeePromoactivitiesViewComponent } from './containers/employee-promoactivities-view/employee-promoactivities-view.component';
 import { EmployeeCheckPartsViewComponent } from './containers/employee-check-parts-view/employee-check-parts-view.component';
+import { NotificationsPanelComponent } from './containers/notifications-panel/notifications-panel.component';
+import {ClickOutsideModule} from 'ng-click-outside';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { EmployeeCheckPartsViewComponent } from './containers/employee-check-par
     EmployeeTasksViewComponent,
     EmployeePromoactivitiesViewComponent,
     EmployeeCheckPartsViewComponent,
+    NotificationsPanelComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { EmployeeCheckPartsViewComponent } from './containers/employee-check-par
     MaterialModule,
     BrowserAnimationsModule,
     ElModule.forRoot(),
+    ClickOutsideModule,
     UnileverUiModule,
     BekzhanModule,
     YerbolModule,

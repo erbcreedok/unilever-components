@@ -12,6 +12,7 @@ import { PromoactivitiesDonutChartComponent } from './promoactivities-donut-char
 import { MaterialModule } from '../material/material.module';
 import { MAT_DATE_LOCALE } from '@angular/material';
 import { CheckPartsTableComponent } from './check-parts-table/check-parts-table.component';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   imports: [
@@ -27,13 +28,15 @@ import { CheckPartsTableComponent } from './check-parts-table/check-parts-table.
     TaskTableComponent,
     PromoactivitiesBarChartComponent,
     PromoactivitiesDonutChartComponent,
-    CheckPartsTableComponent
+    CheckPartsTableComponent,
+    NotificationComponent
   ],
   exports: [
     TaskTableComponent,
     PromoactivitiesBarChartComponent,
     PromoactivitiesDonutChartComponent,
-    CheckPartsTableComponent
+    CheckPartsTableComponent,
+    NotificationComponent
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'ru-RU'},
