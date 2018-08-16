@@ -1,3 +1,29 @@
-<p>
+<div class="container my-5">
   bekzhan works!
-</p>
+
+  <app-tabs>
+    <app-tab [tabTitle]="'People '">
+      <h3>List of People</h3>
+      <hr />
+      <button class="btn btn-default" (click)="onOpenAbout()"><i class="glyphicon glyphicon-question-sign"></i> About this</button>
+    </app-tab>
+    <app-tab [tabTitle]="'ARr '">
+      asd
+    </app-tab>
+    <app-tab [tabTitle]="'asdq'">
+      <h3>List of Peopleasda</h3>
+      <hr />
+      <button class="btn btn-default" (click)="onOpenAbout()"><i class="glyphicon glyphicon-question-sign"></i> About this</button>
+    </app-tab>
+  </app-tabs>
+
+  <app-profile-notifications></app-profile-notifications>
+
+  <app-new-task></app-new-task>
+
+  <app-task-filter></app-task-filter>
+  <app-proverka-dolei-filter></app-proverka-dolei-filter>
+  <app-account-settings></app-account-settings>
+  <app-gallery-filter></app-gallery-filter>
+
+</div>

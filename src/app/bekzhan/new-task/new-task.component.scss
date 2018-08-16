@@ -1,0 +1,63 @@
+.new-task {
+  width: 40rem;
+  height: 86rem;
+  background: #fff;
+  position: relative;
+  border: solid 1px #dfe2e5;
+
+  .new-task-top {
+    padding: 1.5rem 4rem;
+
+    button {
+      height: 35px;
+      color: #354052;
+      font-size: 1.4rem;
+      padding: 0.3rem 1.3rem 0;
+      font-weight: 500;
+      border-radius: 4px;
+      background-color: #fff;
+      border: solid 1px #ced0da;
+    }
+  }
+
+  .new-task-middle {
+    padding: 3rem 4rem 4rem;
+    border-top: solid 1px #dfe2e5;
+  }
+
+  .new-task-bottom {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1.5rem 4rem;
+    position: absolute;
+  }
+
+  label {
+    font-weight: 500;
+  }
+}
+
+
+.el-date-editor.el-input, .el-date-editor.el-input__inner {
+  width: inherit;
+}
+
+el-select ::ng-deep .el-select {
+  display: block;
+}
+el-form-item ::ng-deep .el-form-item__label {
+  padding: 0;
+  color: #7f8fa4;
+  font-weight: 500;
+  line-height: inherit;
+}
+el-input ::ng-deep textarea {
+  resize: none;
+}
+el-button ::ng-deep button {
+  width: 50%;
+}
+mat-form-field {
+  width: 100%;
+}
