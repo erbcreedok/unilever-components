@@ -1,4 +1,4 @@
-.ngx-datatable {
+.ngx-datatable.unilever-table {
   width: 100%;
   .datatable-body-row, .datatable-header {
     min-height: 45px;
@@ -62,4 +62,32 @@
     height: auto;
     font-weight: 500;
   }
+}
+.shelled-table {
+  $cell-color: $blue-gray-1 - #080009;
+  .datatable-body {
+    min-height: 376px;
+  }
+  .datatable-header-cell, .datatable-body-cell {
+    padding: 10px;
+    height: 38px;
+    border: 1px solid $blue-gray-4;
+    color: $cell-color;
+  }
+  .datatable-header-cell, .datatable-row-left .datatable-body-cell{
+    background-color: $blue-gray-6;
+    color: $blue-dark;
+  }
+  .datatable-row-left .datatable-header-cell {
+    background-color: $blue-gray-4 - #0B0805;
+    color: $cell-color;
+  }
+  .datatable-body-cell .danger {
+    border: 1px solid $red-white-1;
+    margin: -10px;
+    padding: 10px 10px 2px 9px;
+    background-color: $red-white;
+    color: $red-white-1;
+  }
+
 }

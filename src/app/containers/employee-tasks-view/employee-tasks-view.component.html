@@ -1,10 +1,18 @@
-<div class="box p-5">
-  <div class="d-flex align-items-center justify-content-between mb-4">
-    <h3>Все задачи</h3>
-    <el-button>
-      <i class="fas fa-filter"></i>
-      Фильтр
-    </el-button>
+<div class="box bordered p-5">
+  <div class="row justify-content-between">
+    <div class="col-lg-6" style="position: relative">
+      <h3 class="mb-5">Задачи по промоактивностям</h3>
+      <ui-chart-legends class="d-block mb-5" [data]="data.legend"></ui-chart-legends>
+      <h3 class="mb-4">Эффективность задач</h3>
+      <div style="max-width: 400px">
+        <div *ngFor="let efficiency of data.efficiencies" class="mb-4">
+          <p class="small color-gray mb-1">{{efficiency.label}}  {{efficiency.percentage}}%</p>
+          <el-progress [stroke-width]="10" [percentage]="efficiency.percentage" [status]="efficiency.percentage===100 ? 'success' : ''"></el-progress>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5 mt-3" style="position: relative">
+      <app-promoactivities-donut-chart></app-promoactivities-donut-chart>
+    </div>
   </div>
-  <app-task-table class="mx--5"></app-task-table>
 </div>

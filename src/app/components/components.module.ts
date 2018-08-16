@@ -11,6 +11,7 @@ import { ChartjsModule } from '@ctrl/ngx-chartjs';
 import { PromoactivitiesDonutChartComponent } from './promoactivities-donut-chart/promoactivities-donut-chart.component';
 import { MaterialModule } from '../material/material.module';
 import { MAT_DATE_LOCALE } from '@angular/material';
+import { CheckPartsTableComponent } from './check-parts-table/check-parts-table.component';
 
 @NgModule({
   imports: [
@@ -25,12 +26,14 @@ import { MAT_DATE_LOCALE } from '@angular/material';
   declarations: [
     TaskTableComponent,
     PromoactivitiesBarChartComponent,
-    PromoactivitiesDonutChartComponent
+    PromoactivitiesDonutChartComponent,
+    CheckPartsTableComponent
   ],
   exports: [
     TaskTableComponent,
     PromoactivitiesBarChartComponent,
-    PromoactivitiesDonutChartComponent
+    PromoactivitiesDonutChartComponent,
+    CheckPartsTableComponent
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'ru-RU'},
