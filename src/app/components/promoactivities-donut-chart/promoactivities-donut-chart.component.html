@@ -1,0 +1,26 @@
+<div class="row mb-4">
+    <div class="col-md-6">
+        <p>Показать от</p>
+        <mat-form-field>
+            <input matInput [matDatepicker]="dateFrom" placeholder="Выберите дату" disabled style="width: 100px">
+            <mat-datepicker-toggle matPrefix [for]="dateFrom"></mat-datepicker-toggle>
+            <mat-datepicker #dateFrom disabled="false"></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div class="col-md-6">
+        <p>До</p>
+        <mat-form-field>
+            <input matInput [matDatepicker]="dateTo" placeholder="Выберите дату" disabled style="width: 100px">
+            <mat-datepicker-toggle matPrefix [for]="dateTo"></mat-datepicker-toggle>
+            <mat-datepicker #dateTo disabled="false"></mat-datepicker>
+        </mat-form-field>
+    </div>
+</div>
+<div class="d-flex">
+    <div class="col-6">
+        <ngx-chartjs type="doughnut" [legend]="{display: false}" [data]="data" [width]="300" [height]="300"></ngx-chartjs>
+    </div>
+    <div class="col-6">
+        <ui-chart-legends [data]="legend" [vertical]="true"></ui-chart-legends>
+    </div>
+</div>

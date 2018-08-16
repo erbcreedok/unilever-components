@@ -1,0 +1,99 @@
+<div class="filter">
+  <el-form label-width="0" label-position="top">
+
+      <div class="mb-4">
+        <label for="">Город</label>
+        <el-select [model]="'*'">
+          <el-option *ngFor="let item of [{value: '*',label: 'Все' },
+            { value: 'Магнум 1', label: 'Магнум 1' },
+            { value: 'Курмашев Айдос', label: 'Курмашев Айдос' },
+            { value: 'Курмашев Айдос', label: 'Курмашев Айдос' }]"
+                     [label]="item.label"
+                     [elDisabled]="item.elDisabled"
+                     [value]="item.value">
+          </el-option>
+        </el-select>
+      </div>
+
+      <div class="mb-4">
+        <label for="">Сеть</label>
+        <el-select [model]="'*'">
+          <el-option *ngFor="let item of [{value: '*',label: 'Все' },
+            { value: 'Магнум 1', label: 'Магнум 1' },
+            { value: 'Курмашев Айдос', label: 'Курмашев Айдос' },
+            { value: 'Курмашев Айдос', label: 'Курмашев Айдос' }]"
+                     [label]="item.label"
+                     [elDisabled]="item.elDisabled"
+                     [value]="item.value">
+          </el-option>
+        </el-select>
+      </div>
+
+      <div class="mb-4">
+        <label for="">Дверь</label>
+        <el-select [model]="'*'">
+          <el-option *ngFor="let item of [{value: '*',label: 'Все' },
+            { value: 'Магнум 1', label: 'Магнум 1' },
+            { value: 'Курмашев Айдос', label: 'Курмашев Айдос' },
+            { value: 'Курмашев Айдос', label: 'Курмашев Айдос' }]"
+                     [label]="item.label"
+                     [elDisabled]="item.elDisabled"
+                     [value]="item.value">
+          </el-option>
+        </el-select>
+      </div>
+
+      <div class="d-inline-block w-50 pr-3">
+        <label for="task-desc">
+          Показать от
+        </label>
+        <mat-form-field>
+            <input matInput [matDatepicker]="dateFrom" placeholder="Выберите дату" disabled>
+            <mat-datepicker-toggle matPrefix [for]="dateFrom"></mat-datepicker-toggle>
+            <mat-datepicker #dateFrom disabled="false"></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="d-inline-block w-50 pl-3 mt-2">
+        <label for="task-desc">
+          До
+        </label>
+        <mat-form-field>
+            <input matInput [matDatepicker]="dateTo" placeholder="Выберите дату" disabled>
+            <mat-datepicker-toggle matPrefix [for]="dateTo"></mat-datepicker-toggle>
+            <mat-datepicker #dateTo disabled="false"></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-4">
+        <label for="">Категория</label>
+        <el-select [model]="'*'">
+          <el-option *ngFor="let item of [{value: '*',label: 'Все' },
+            { value: 'Магнум 1', label: 'Магнум 1' },
+            { value: 'Курмашев Айдос', label: 'Курмашев Айдос' },
+            { value: 'Курмашев Айдос', label: 'Курмашев Айдос' }]"
+                     [label]="item.label"
+                     [elDisabled]="item.elDisabled"
+                     [value]="item.value">
+          </el-option>
+        </el-select>
+      </div>
+
+      <div class="mb-5">
+        <label for="">Категория</label>
+        <el-select [model]="'*'">
+          <el-option *ngFor="let item of [{value: '*',label: 'Все' },
+            { value: 'Магнум 1', label: 'Магнум 1' },
+            { value: 'Курмашев Айдос', label: 'Курмашев Айдос' },
+            { value: 'Курмашев Айдос', label: 'Курмашев Айдос' }]"
+                     [label]="item.label"
+                     [elDisabled]="item.elDisabled"
+                     [value]="item.value">
+          </el-option>
+        </el-select>
+      </div>
+
+
+      <button class="btn btn-blue w-100 mt-2">Применить</button>
+
+  </el-form>
+</div>

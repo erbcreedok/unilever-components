@@ -1,8 +1,10 @@
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { MaterialModule } from './material/material.module';
 import { ElModule } from 'element-angular/release/element-angular.module';
+import { ChartjsModule } from '@ctrl/ngx-chartjs';
 import 'element-angular/theme/index.css';
 import { BekzhanModule } from './bekzhan/bekzhan.module';
 import { YerbolModule } from './yerbol/yerbol.module';
@@ -16,6 +18,9 @@ import { AsideComponent } from './containers/aside/aside.component';
 import { appRoutes } from './app.routes';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { EmployeeViewComponent } from './views/employee-view/employee-view.component';
+import { EmployeeTasksViewComponent } from './containers/employee-tasks-view/employee-tasks-view.component';
+import { EmployeePromoactivitiesViewComponent } from './containers/employee-promoactivities-view/employee-promoactivities-view.component';
+import { EmployeeCheckPartsViewComponent } from './containers/employee-check-parts-view/employee-check-parts-view.component';
 
 @NgModule({
   declarations: [
@@ -26,18 +31,22 @@ import { EmployeeViewComponent } from './views/employee-view/employee-view.compo
     AsideComponent,
     PageNotFoundComponent,
     EmployeeViewComponent,
+    EmployeeTasksViewComponent,
+    EmployeePromoactivitiesViewComponent,
+    EmployeeCheckPartsViewComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
         appRoutes, { enableTracing: true }
     ),
+    MaterialModule,
     BrowserAnimationsModule,
     ElModule.forRoot(),
     UnileverUiModule,
     BekzhanModule,
     YerbolModule,
-    ComponentsModule
+    ComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,54 +6,12 @@
     </div>
 
     <div class="new-task-middle">
-      <div class="mb-4">
-        <label for="task-title">
-          Заголовок задачи<span class="color-red">*</span>
-        </label>
-        <el-input id="task-title" [model]="input" placeholder="Что необходимо сделать?"></el-input>
-        <el-form-item label="Заголовок задачи" [required]="true">
-          <el-input formControlName="mail"></el-input>
-        </el-form-item>
-      </div>
 
-      <div class="mt-2">
-        <label for="task-desc">
-          Описание задачи
-        </label>
-        <el-input id="task-desc" type="textarea"
-                  [autosize]="{ minRows: 3, maxRows: 6  }"
-                  maxlength=400;
-                  placeholder="Подробная информация о задаче"
-                  [model]="textarea3">
-        </el-input>
-      </div>
-
-      <hr>
-
-      <div class="d-inline-block w-50 pr-3">
-        <label for="task-desc" class="mt-2  ">
-          Дата начала
-        </label>
-        <el-date-picker class="w-100" (modelChange)="handle($event)"
-                        [format]="'dd/MM/yyyy'">
-        </el-date-picker>
-      </div>
-      <div class="d-inline-block w-50 pl-3">
-        <label for="task-desc" class="mt-2  ">
-          Крайний срок
-        </label>
-        <el-date-picker (modelChange)="handle($event)"
-                        [format]="'dd/MM/yyyy'">
-        </el-date-picker>
-      </div>
-
-      <div class="">
-        <label for="">Исполнитель</label>
-        <el-select [(model)]="value" placeholder="Выберите из списка сотрудников">
-          <el-option *ngFor="let item of [{value: '选项1',label: 'Курмашев Айдос' },
-            { value: '选项2', label: 'Калжан Бекжан' },
-            { value: '选项4', label: 'Курмашев Айдос' },
-            { value: '选项5', label: 'Курмашев Айдос' }]"
+      <div style="margin-bottom: 2rem">
+        <label for="">Тип задачи</label>
+        <el-select [(model)]="taskType" placeholder="Выберите из списка задач">
+          <el-option *ngFor="let item of [{value: 'FreeTask',label: 'Свободная задача' },
+            { value: 'CheckPromoactivity', label: 'Проверка промоактивностей' }]"
                      [label]="item.label"
                      [elDisabled]="item.elDisabled"
                      [value]="item.value">
@@ -61,10 +19,122 @@
         </el-select>
       </div>
 
+      <div class="d-inline-block w-50 pr-3">
+        <label for="task-desc">
+          Дата начала
+        </label>
+        <mat-form-field>
+            <input matInput [matDatepicker]="dateFrom" placeholder="Выберите дату" disabled>
+            <mat-datepicker-toggle matPrefix [for]="dateFrom"></mat-datepicker-toggle>
+            <mat-datepicker #dateFrom disabled="false"></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="d-inline-block w-50 pl-3 mt-2">
+        <label for="task-desc">
+          Крайний срок
+        </label>
+        <mat-form-field>
+            <input matInput [matDatepicker]="dateTo" placeholder="Выберите дату" disabled>
+            <mat-datepicker-toggle matPrefix [for]="dateTo"></mat-datepicker-toggle>
+            <mat-datepicker #dateTo disabled="false"></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div style="margin-top: 3.5rem;margin-bottom: 2rem">
+        <label for="">Исполнитель</label>
+        <el-select [(model)]="value" placeholder="Выберите из списка сотрудников">
+          <el-option *ngFor="let item of [{value: 'Курмашев Айдос',label: 'Курмашев Айдос' },
+            { value: 'Калжан Бекжан', label: 'Калжан Бекжан' },
+            { value: 'Курмашев Айдос', label: 'Курмашев Айдос' },
+            { value: 'Курмашев Айдос', label: 'Курмашев Айдос' }]"
+                     [label]="item.label"
+                     [elDisabled]="item.elDisabled"
+                     [value]="item.value">
+          </el-option>
+        </el-select>
+      </div>
+      <div style="margin-bottom: 3.5rem">
+        <label for="">Проверяющий</label>
+        <el-select [(model)]="value" placeholder="Выберите из списка сотрудников">
+          <el-option *ngFor="let item of [{value: 'Курмашев Айдос',label: 'Курмашев Айдос' },
+            { value: 'Калжан Бекжан', label: 'Калжан Бекжан' },
+            { value: 'Курмашев Айдос', label: 'Курмашев Айдос' },
+            { value: 'Курмашев Айдос', label: 'Курмашев Айдос' }]"
+                     [label]="item.label"
+                     [elDisabled]="item.elDisabled"
+                     [value]="item.value">
+          </el-option>
+        </el-select>
+      </div>
+
+
+      <div *ngIf="taskType === 'FreeTask'">
+        <el-form-item label="Заголовок задачи">
+          <el-input formControlName="title" [model]="input" placeholder="Что необходимо сделать?"></el-input>
+        </el-form-item>
+        <el-form-item label="Описание задачи">
+          <el-input type="textarea"
+                    formControlName="task-desc"
+                    [autosize]="{ minRows: 3, maxRows: 6  }"
+                    maxlength=400;
+                    placeholder="Подробная информация о задаче"
+                    [model]="textarea3">
+          </el-input>
+        </el-form-item>
+      </div>
+
+      <div *ngIf="taskType === 'CheckPromoactivity'">
+        <div class="w-50 mb-4">
+          <label for="">Город</label>
+          <el-select [(model)]="value" placeholder="Выберите город">
+            <el-option *ngFor="let item of [{value: '*',label: 'Все' },
+              { value: 'Магнум 1', label: 'Магнум 1' },
+              { value: 'Курмашев Айдос', label: 'Курмашев Айдос' },
+              { value: 'Курмашев Айдос', label: 'Курмашев Айдос' }]"
+                       [label]="item.label"
+                       [elDisabled]="item.elDisabled"
+                       [value]="item.value">
+            </el-option>
+          </el-select>
+        </div>
+
+        <div class="d-inline-block w-50 pr-3">
+          <label for="">Сеть</label>
+          <el-select [(model)]="value" placeholder="Выберите сеть">
+            <el-option *ngFor="let item of [{value: '*',label: 'Все' },
+              { value: 'Магнум 1', label: 'Магнум 1' },
+              { value: 'Курмашев Айдос', label: 'Курмашев Айдос' },
+              { value: 'Курмашев Айдос', label: 'Курмашев Айдос' }]"
+                       [label]="item.label"
+                       [elDisabled]="item.elDisabled"
+                       [value]="item.value">
+            </el-option>
+          </el-select>
+        </div>
+        <div class="d-inline-block w-50 pl-3">
+          <label for="">Дверь</label>
+          <el-select [(model)]="value" placeholder="Выберите дверь">
+            <el-option *ngFor="let item of [{value: '*',label: 'Все' },
+              { value: 'Магнум 1', label: 'Магнум 1' },
+              { value: 'Курмашев Айдос', label: 'Курмашев Айдос' },
+              { value: 'Курмашев Айдос', label: 'Курмашев Айдос' }]"
+                       [label]="item.label"
+                       [elDisabled]="item.elDisabled"
+                       [value]="item.value">
+            </el-option>
+          </el-select>
+        </div>
+      </div>
+
     </div>
 
     <div class="new-task-bottom">
-
+      <div class="d-inline-block pr-2 w-50">
+        <button class="btn btn-gray w-100">Отменить</button>
+      </div>
+      <div class="d-inline-block pl-2 w-50">
+        <button class="btn btn-blue w-100">Создать задачу</button>
+      </div>
     </div>
   </el-form>
 </div>
