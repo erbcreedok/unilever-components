@@ -9,7 +9,7 @@ ul {
     text-align: center;
     border: 1px solid #ced0da;
     border-right: 0;
-    background-color: #eff3f6;
+    background: linear-gradient(#f2f4f7, #fff);
     transition: 0.2s;
 
     &:hover {
@@ -20,7 +20,7 @@ ul {
       color: #fff;
       font-weight: normal;
       border: 1px solid #1389e1;
-      background-color: #1389e1;
+      background: linear-gradient(#1991eb, #2da1f8);
     }
 
     &:first-child {
