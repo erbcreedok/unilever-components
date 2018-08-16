@@ -1,8 +1,16 @@
 @import "../../../scss/1-abstracts/variables";
 :host {
-  background-color: #fff;
-  border-bottom: 1px solid $blue-gray-4;
+  width: 100%;
+  max-width: inherit;
 }
 .right-offset {
   padding-right: 40px;
+}
+.header-container {
+  position: fixed;
+  max-width: inherit;
+  width: inherit;
+  right: 0;
+  background-color: #fff;
+  border-bottom: 1px solid $blue-gray-4;
 }
