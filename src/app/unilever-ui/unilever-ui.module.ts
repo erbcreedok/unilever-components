@@ -12,7 +12,7 @@ import { UiTaskStatusComponent } from './task-status/task-status.component';
 import { HelperComponent } from './helper/helper.component';
 import { ProfileBoxComponent } from './profile-box/profile-box.component';
 import { UiChartLegendsComponent } from './ui-chart-legends/ui-chart-legends.component';
-
+import { UiButtonTabsComponent } from './ui-button-tabs/ui-button-tabs.component';
 
 @NgModule({
   imports: [
@@ -29,7 +29,8 @@ import { UiChartLegendsComponent } from './ui-chart-legends/ui-chart-legends.com
     UiTaskStatusComponent,
     HelperComponent,
     ProfileBoxComponent,
-    UiChartLegendsComponent
+    UiChartLegendsComponent,
+    UiButtonTabsComponent,
   ],
   exports: [
     ProfileWindowComponent,

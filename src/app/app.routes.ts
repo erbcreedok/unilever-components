@@ -7,6 +7,7 @@ import { EmployeePromoactivitiesViewComponent } from './containers/employee-prom
 import { EmployeeCheckPartsViewComponent } from './containers/employee-check-parts-view/employee-check-parts-view.component';
 import { BekzhanComponent } from './bekzhan/bekzhan.component';
 import { YerbolComponent } from './yerbol/yerbol.component';
+import {TasksViewComponent} from './views/tasks-view/tasks-view.component';
 
 export const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,6 +18,7 @@ export const appRoutes: Routes = [
         {path: 'promoactivities', component: EmployeePromoactivitiesViewComponent},
         {path: 'check-parts', component: EmployeeCheckPartsViewComponent}
     ]},
+    { path: 'tasks', component: TasksViewComponent },
     { path: 'bekzhan', component: BekzhanComponent },
     { path: 'yerbol', component: YerbolComponent },
     { path: 'no-route', component: PageNotFoundComponent },

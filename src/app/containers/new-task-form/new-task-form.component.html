@@ -2,16 +2,15 @@
   <el-form label-width="0" label-position="top">
     <div class="new-task-top d-flex justify-content-between">
       <h2 class="fw-400 mb-0 mt-1 pt-2">Новая задача</h2>
-      <button class="btn" type="button" name="button">Закрыть</button>
+      <button class="btn" type="button" name="button" (click)="onCloseClick()">Закрыть</button>
     </div>
 
     <div class="new-task-middle">
 
       <div style="margin-bottom: 2rem">
-        <label for="">Тип задачи</label>
+        <label>Тип задачи</label>
         <el-select [(model)]="taskType" placeholder="Выберите из списка задач">
-          <el-option *ngFor="let item of [{value: 'FreeTask',label: 'Свободная задача' },
-            { value: 'CheckPromoactivity', label: 'Проверка промоактивностей' }]"
+          <el-option *ngFor="let item of taskTypes"
                      [label]="item.label"
                      [elDisabled]="item.elDisabled"
                      [value]="item.value">
@@ -20,28 +19,28 @@
       </div>
 
       <div class="d-inline-block w-50 pr-3">
-        <label for="task-desc">
+        <label>
           Дата начала
         </label>
         <mat-form-field>
-            <input matInput [matDatepicker]="dateFrom" placeholder="Выберите дату" disabled>
-            <mat-datepicker-toggle matPrefix [for]="dateFrom"></mat-datepicker-toggle>
-            <mat-datepicker #dateFrom disabled="false"></mat-datepicker>
+          <input matInput [matDatepicker]="dateFrom" placeholder="Выберите дату" disabled>
+          <mat-datepicker-toggle matPrefix [for]="dateFrom"></mat-datepicker-toggle>
+          <mat-datepicker #dateFrom disabled="false"></mat-datepicker>
         </mat-form-field>
       </div>
       <div class="d-inline-block w-50 pl-3 mt-2">
-        <label for="task-desc">
+        <label>
           Крайний срок
         </label>
         <mat-form-field>
-            <input matInput [matDatepicker]="dateTo" placeholder="Выберите дату" disabled>
-            <mat-datepicker-toggle matPrefix [for]="dateTo"></mat-datepicker-toggle>
-            <mat-datepicker #dateTo disabled="false"></mat-datepicker>
+          <input matInput [matDatepicker]="dateTo" placeholder="Выберите дату" disabled>
+          <mat-datepicker-toggle matPrefix [for]="dateTo"></mat-datepicker-toggle>
+          <mat-datepicker #dateTo disabled="false"></mat-datepicker>
         </mat-form-field>
       </div>
 
       <div style="margin-top: 3.5rem;margin-bottom: 2rem">
-        <label for="">Исполнитель</label>
+        <label>Исполнитель</label>
         <el-select [(model)]="value" placeholder="Выберите из списка сотрудников">
           <el-option *ngFor="let item of [{value: 'Курмашев Айдос',label: 'Курмашев Айдос' },
             { value: 'Калжан Бекжан', label: 'Калжан Бекжан' },
@@ -54,7 +53,7 @@
         </el-select>
       </div>
       <div style="margin-bottom: 3.5rem">
-        <label for="">Проверяющий</label>
+        <label>Проверяющий</label>
         <el-select [(model)]="value" placeholder="Выберите из списка сотрудников">
           <el-option *ngFor="let item of [{value: 'Курмашев Айдос',label: 'Курмашев Айдос' },
             { value: 'Калжан Бекжан', label: 'Калжан Бекжан' },
@@ -99,7 +98,7 @@
         </div>
 
         <div class="d-inline-block w-50 pr-3">
-          <label for="">Сеть</label>
+          <label>Сеть</label>
           <el-select [(model)]="value" placeholder="Выберите сеть">
             <el-option *ngFor="let item of [{value: '*',label: 'Все' },
               { value: 'Магнум 1', label: 'Магнум 1' },
@@ -112,7 +111,7 @@
           </el-select>
         </div>
         <div class="d-inline-block w-50 pl-3">
-          <label for="">Дверь</label>
+          <label>Дверь</label>
           <el-select [(model)]="value" placeholder="Выберите дверь">
             <el-option *ngFor="let item of [{value: '*',label: 'Все' },
               { value: 'Магнум 1', label: 'Магнум 1' },

@@ -8,18 +8,32 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   showNotifications = false;
+  showNewTask = false;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
 
   openNotifications() {
     if (!this.showNotifications) {
       setTimeout(() => {
         this.showNotifications = true;
-      }, 100);
+      }, 10);
     }
   }
-
-  constructor() { }
-
-  ngOnInit() {
+  closeNotifications() {
+    if (this.showNotifications) {
+      this.showNotifications = false;
+    }
+  }
+  openNewTask() {
+    if (!this.showNewTask) {
+      setTimeout(() => {
+        this.showNewTask = true;
+      }, 10);
+    }
   }
 
 }

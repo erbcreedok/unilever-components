@@ -23,6 +23,9 @@ import { EmployeePromoactivitiesViewComponent } from './containers/employee-prom
 import { EmployeeCheckPartsViewComponent } from './containers/employee-check-parts-view/employee-check-parts-view.component';
 import { NotificationsPanelComponent } from './containers/notifications-panel/notifications-panel.component';
 import {ClickOutsideModule} from 'ng-click-outside';
+import { NewTaskFormComponent } from './containers/new-task-form/new-task-form.component';
+import { AccountSettingsFormComponent } from './containers/account-settings-form/account-settings-form.component';
+import { TasksViewComponent } from './views/tasks-view/tasks-view.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,9 @@ import {ClickOutsideModule} from 'ng-click-outside';
     EmployeePromoactivitiesViewComponent,
     EmployeeCheckPartsViewComponent,
     NotificationsPanelComponent,
+    NewTaskFormComponent,
+    AccountSettingsFormComponent,
+    TasksViewComponent,
   ],
   imports: [
     BrowserModule,
