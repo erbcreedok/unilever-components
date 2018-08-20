@@ -2,10 +2,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tab',
-  styles: [
-    `
-  `
-  ],
+  styles: [],
   template: `
     <div [hidden]="!active" class="pane">
       <ng-content></ng-content>

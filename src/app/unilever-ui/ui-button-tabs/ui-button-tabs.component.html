@@ -1,3 +1,13 @@
-<p>
-  ui-button-tabs works!
-</p>
+<div>
+  <ul class="nav">
+    <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
+      <div class="ui-tab" *ngIf="tab.route.length === 0">
+        {{tab.title}}
+      </div>
+      <a class="ui-tab" *ngIf="tab.route.length > 0" [routerLink]="tab.route">
+        {{tab.title}}
+      </a>
+    </li>
+  </ul>
+</div>
+<ng-content></ng-content>

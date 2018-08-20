@@ -26,6 +26,8 @@ import {ClickOutsideModule} from 'ng-click-outside';
 import { NewTaskFormComponent } from './containers/new-task-form/new-task-form.component';
 import { AccountSettingsFormComponent } from './containers/account-settings-form/account-settings-form.component';
 import { TasksViewComponent } from './views/tasks-view/tasks-view.component';
+import { MyTasksViewComponent } from './views/my-tasks-view/my-tasks-view.component';
+import { OtherTasksViewComponent } from './views/other-tasks-view/other-tasks-view.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { TasksViewComponent } from './views/tasks-view/tasks-view.component';
     NewTaskFormComponent,
     AccountSettingsFormComponent,
     TasksViewComponent,
+    MyTasksViewComponent,
+    OtherTasksViewComponent,
   ],
   imports: [
     BrowserModule,

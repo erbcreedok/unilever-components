@@ -8,6 +8,9 @@ import { EmployeeCheckPartsViewComponent } from './containers/employee-check-par
 import { BekzhanComponent } from './bekzhan/bekzhan.component';
 import { YerbolComponent } from './yerbol/yerbol.component';
 import {TasksViewComponent} from './views/tasks-view/tasks-view.component';
+import {MyTasksViewComponent} from './views/my-tasks-view/my-tasks-view.component';
+import {OtherTasksViewComponent} from './views/other-tasks-view/other-tasks-view.component';
+import {TasksComponent} from './containers/tasks/tasks.component';
 
 export const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,7 +21,14 @@ export const appRoutes: Routes = [
         {path: 'promoactivities', component: EmployeePromoactivitiesViewComponent},
         {path: 'check-parts', component: EmployeeCheckPartsViewComponent}
     ]},
-    { path: 'tasks', component: TasksViewComponent },
+    { path: 'tasks', component: TasksViewComponent, children: [
+        {path: '', pathMatch: 'prefix', redirectTo: 'my/in-process'},
+        {path: 'my', pathMatch: 'prefix', component: MyTasksViewComponent, children: [
+            {path: '', pathMatch: 'prefix', redirectTo: 'in-process'},
+            {path: ':status', pathMatch: 'prefix', component: TasksComponent},
+        ]},
+        {path: 'other', pathMatch: 'prefix', component: OtherTasksViewComponent},
+    ]},
     { path: 'bekzhan', component: BekzhanComponent },
     { path: 'yerbol', component: YerbolComponent },
     { path: 'no-route', component: PageNotFoundComponent },

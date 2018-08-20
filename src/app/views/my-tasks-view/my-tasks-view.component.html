@@ -1,0 +1,22 @@
+<div class="box pt-2 pb-4 mb-5 bordered">
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link *ngFor="let tab of tabs"
+       [routerLink]="[tab.path]"
+       [active]="selectedPath === tab.path"
+    > {{tab.label}} </a>
+  </nav>
+</div>
+<div class="row">
+  <div class="col-2 box bordered task-types">
+    <h3 class="color-gray mb-4">Типы задач</h3>
+    <ul class="color-headings font-weight-500 pl-0">
+      <li class="mb-3 active">Промоактивности</li>
+      <li class="mb-3">Проверка долей</li>
+      <li class="mb-3">Сбор цен</li>
+      <li class="mb-3">Дополнительные</li>
+    </ul>
+  </div>
+  <div class="col-10">
+    <router-outlet></router-outlet>
+  </div>
+</div>

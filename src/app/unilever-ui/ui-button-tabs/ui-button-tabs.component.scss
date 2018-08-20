@@ -1,0 +1,32 @@
+ul {
+
+  .ui-tab {
+    display: block;
+    width: 18rem;
+    padding: 8px 0;
+    color: #354052;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid #ced0da;
+    border-right: 0;
+    background: linear-gradient(#f2f4f7, #fff);
+    transition: 0.2s;
+
+    &:hover {
+
+    }
+  }
+  li:first-child .ui-tab {
+    border-radius: 4px 0 0 4px;
+  }
+  li:last-child .ui-tab {
+    border-right: 1px solid #ced0da;
+    border-radius: 0 4px 4px 0;
+  }
+  li.active .ui-tab {
+    color: #fff;
+    border: 1px solid #1389e1;
+    background: linear-gradient(#1991eb, #2da1f8);
+  }
+}
