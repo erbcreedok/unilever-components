@@ -11,6 +11,8 @@ import {TasksViewComponent} from './views/tasks-view/tasks-view.component';
 import {MyTasksViewComponent} from './views/my-tasks-view/my-tasks-view.component';
 import {OtherTasksViewComponent} from './views/other-tasks-view/other-tasks-view.component';
 import {TasksComponent} from './containers/tasks/tasks.component';
+import {ContactsViewComponent} from './views/contacts-view/contacts-view.component';
+import {AnalyticsViewComponent} from './views/analytics-view/analytics-view.component';
 
 export const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -27,7 +29,20 @@ export const appRoutes: Routes = [
             {path: '', pathMatch: 'prefix', redirectTo: 'in-process'},
             {path: ':status', pathMatch: 'prefix', component: TasksComponent},
         ]},
-        {path: 'other', pathMatch: 'prefix', component: OtherTasksViewComponent},
+        {path: 'other', pathMatch: 'prefix', component: OtherTasksViewComponent, children: [
+            {path: '', pathMatch: 'prefix', redirectTo: 'promoactivities'},
+            {path: ':status', pathMatch: 'prefix', component: TasksComponent},
+        ]},
+    ]},
+    { path: 'contacts', component: ContactsViewComponent, children: [
+        {path: '', pathMatch: 'prefix', redirectTo: 'company'},
+        {path: ':type', pathMatch: 'prefix', component: TasksComponent},
+    ]},
+    { path: 'analytics', component: AnalyticsViewComponent, children: [
+        {path: '', pathMatch: 'prefix', redirectTo: 'promoactivities'},
+        {path: 'promoactivities', component: EmployeePromoactivitiesViewComponent},
+        {path: 'check-parts', component: EmployeeCheckPartsViewComponent},
+        {path: 'additional', component: EmployeeTasksViewComponent}
     ]},
     { path: 'bekzhan', component: BekzhanComponent },
     { path: 'yerbol', component: YerbolComponent },

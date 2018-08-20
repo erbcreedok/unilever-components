@@ -3,24 +3,26 @@ import {Subscription} from 'rxjs/index';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-other-tasks-view',
-  templateUrl: './other-tasks-view.component.html',
-  styleUrls: ['./other-tasks-view.component.scss']
+  selector: 'app-analytics-view',
+  templateUrl: './analytics-view.component.html',
+  styleUrls: ['./analytics-view.component.scss']
 })
-export class OtherTasksViewComponent implements OnInit, OnDestroy {
+export class AnalyticsViewComponent implements OnInit, OnDestroy {
 
-  tabs: {label: string, path: string}[] = [
-    {label: 'Промоактивности',  path: 'promoactivities'},
-    {label: 'Проверка долей',   path: 'parts-check'},
-    {label: 'Сбор цен',         path: 'price-collection'},
-    {label: 'Дополнительные',   path: 'additional'}
-  ];
   selectedPath = '';
   subscriptions: Subscription[] = [];
-
+  tabs: {label: string, path: string}[] = [
+    {label: 'Промоактивоности', path: 'promoactivities'},
+    {label: 'Проверка долей',   path: 'check-parts'},
+    {label: 'Дополнительные',   path: 'additional'}
+  ];
 
   constructor(private router: Router,
               private route: ActivatedRoute) { }
+
+  ngOnDestroy() {
+    this.subscriptions.forEach(s => s.unsubscribe());
+  }
 
   ngOnInit() {
     this.selectedPath = this.getSelectedPath();
@@ -31,13 +33,7 @@ export class OtherTasksViewComponent implements OnInit, OnDestroy {
     );
   }
 
-  ngOnDestroy() {
-    this.subscriptions.forEach(s => s.unsubscribe());
-  }
-
   getSelectedPath(): string {
     return this.route.snapshot.firstChild ? this.route.snapshot.firstChild.url[0].path : '';
   }
-
-
 }

@@ -1,3 +1,13 @@
-<p>
-  other-tasks-view works!
-</p>
+<div class="box pt-2 pb-4 mb-5 bordered">
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link *ngFor="let tab of tabs"
+       [routerLink]="[tab.path]"
+       [active]="selectedPath === tab.path"
+    > {{tab.label}} </a>
+  </nav>
+</div>
+<div class="row">
+  <div class="col-12">
+    <router-outlet></router-outlet>
+  </div>
+</div>

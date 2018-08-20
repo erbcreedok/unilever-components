@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { ElModule } from 'element-angular/release/element-angular.module';
-import { ChartjsModule } from '@ctrl/ngx-chartjs';
 import 'element-angular/theme/index.css';
 import { BekzhanModule } from './bekzhan/bekzhan.module';
 import { YerbolModule } from './yerbol/yerbol.module';
@@ -28,6 +27,8 @@ import { AccountSettingsFormComponent } from './containers/account-settings-form
 import { TasksViewComponent } from './views/tasks-view/tasks-view.component';
 import { MyTasksViewComponent } from './views/my-tasks-view/my-tasks-view.component';
 import { OtherTasksViewComponent } from './views/other-tasks-view/other-tasks-view.component';
+import { ContactsViewComponent } from './views/contacts-view/contacts-view.component';
+import { AnalyticsViewComponent } from './views/analytics-view/analytics-view.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,8 @@ import { OtherTasksViewComponent } from './views/other-tasks-view/other-tasks-vi
     TasksViewComponent,
     MyTasksViewComponent,
     OtherTasksViewComponent,
+    ContactsViewComponent,
+    AnalyticsViewComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,8 +6,8 @@
     > {{tab.label}} </a>
   </nav>
 </div>
-<div class="row">
-  <div class="col-2 box bordered task-types">
+<div class="d-flex">
+  <div class="box bordered task-types mr-4" style="min-width: 210px">
     <h3 class="color-gray mb-4">Типы задач</h3>
     <ul class="color-headings font-weight-500 pl-0">
       <li class="mb-3 active">Промоактивности</li>
@@ -16,7 +16,7 @@
       <li class="mb-3">Дополнительные</li>
     </ul>
   </div>
-  <div class="col-10">
+  <div class="w-100 box-bordered">
     <router-outlet></router-outlet>
   </div>
 </div>
