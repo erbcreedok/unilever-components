@@ -11,9 +11,12 @@
     <p class="fs-12">Юрий Спиридонов</p>
 
     <div>
-      <el-button class="py-def" style="height: 35px; width: 35px">
-        <i class="fas fa-filter"></i>
-      </el-button>
+      <el-tooltip placement="top" class="mr-2">
+        <el-button class="py-def" style="height: 35px; width: 35px">
+          <i class="far fa-file-archive"></i>
+        </el-button>
+        <ng-template #tip><span>Скачать архивом</span></ng-template>
+      </el-tooltip>
       <el-button class="py-def">
         Подробнее
       </el-button>
