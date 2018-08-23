@@ -15,4 +15,8 @@ export class ProfileBoxComponent implements OnInit {
   ngOnInit() {
   }
 
+  goTo(link) {
+    this.router.navigate(link);
+}
+
 }
