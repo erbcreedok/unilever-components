@@ -33,7 +33,7 @@ export class TabsComponent implements AfterContentInit {
 
   selectTab(tab: TabComponent) {
     // deactivate all tabs
-    this.tabs.toArray().forEach(tab => (tab.active = false));
+    this.tabs.toArray().forEach(t => (t.active = false));
 
     // activate the tab the user has clicked on.
     tab.active = true;

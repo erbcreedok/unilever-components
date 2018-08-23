@@ -1,11 +1,18 @@
-<div class="header-height d-flex justify-content-end align-items-center right-offset">
-
-  <button class="btn notification-button">
-    <i class="ui-icon icon-notifications"></i>
-    <span class="fs-12 notification-count">4</span>
-  </button>
-
+<div class="header-container header-height d-flex justify-content-end align-items-center right-offset">
+  <div class="notification-wrapper">
+    <button class="btn notification-button" (click)="openNotifications()">
+      <i class="ui-icon icon-notifications"></i>
+      <span class="fs-12 notification-count">4</span>
+    </button>
+    <app-notifications-panel *ngIf="showNotifications"
+                             (clickOutside)="closeNotifications()"
+                             class="notifications-panel"></app-notifications-panel>
+  </div>
   <ul class="nav">
-    <el-button type="success" round>Новая задача</el-button>
+    <el-button type="success" round (click)="openNewTask()">Новая задача</el-button>
+    <div *ngIf="showNewTask" class="new-task-wrapper">
+    <app-new-task-form (close)="showNewTask = false"></app-new-task-form>
+    </div>
+
   </ul>
 </div>

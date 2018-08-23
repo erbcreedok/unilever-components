@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { ElModule } from 'element-angular/release/element-angular.module';
-import { ChartjsModule } from '@ctrl/ngx-chartjs';
 import 'element-angular/theme/index.css';
 import { BekzhanModule } from './bekzhan/bekzhan.module';
 import { YerbolModule } from './yerbol/yerbol.module';
@@ -21,6 +20,15 @@ import { EmployeeViewComponent } from './views/employee-view/employee-view.compo
 import { EmployeeTasksViewComponent } from './containers/employee-tasks-view/employee-tasks-view.component';
 import { EmployeePromoactivitiesViewComponent } from './containers/employee-promoactivities-view/employee-promoactivities-view.component';
 import { EmployeeCheckPartsViewComponent } from './containers/employee-check-parts-view/employee-check-parts-view.component';
+import { NotificationsPanelComponent } from './containers/notifications-panel/notifications-panel.component';
+import {ClickOutsideModule} from 'ng-click-outside';
+import { NewTaskFormComponent } from './containers/new-task-form/new-task-form.component';
+import { AccountSettingsFormComponent } from './containers/account-settings-form/account-settings-form.component';
+import { TasksViewComponent } from './views/tasks-view/tasks-view.component';
+import { MyTasksViewComponent } from './views/my-tasks-view/my-tasks-view.component';
+import { OtherTasksViewComponent } from './views/other-tasks-view/other-tasks-view.component';
+import { ContactsViewComponent } from './views/contacts-view/contacts-view.component';
+import { AnalyticsViewComponent } from './views/analytics-view/analytics-view.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +42,14 @@ import { EmployeeCheckPartsViewComponent } from './containers/employee-check-par
     EmployeeTasksViewComponent,
     EmployeePromoactivitiesViewComponent,
     EmployeeCheckPartsViewComponent,
+    NotificationsPanelComponent,
+    NewTaskFormComponent,
+    AccountSettingsFormComponent,
+    TasksViewComponent,
+    MyTasksViewComponent,
+    OtherTasksViewComponent,
+    ContactsViewComponent,
+    AnalyticsViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +59,7 @@ import { EmployeeCheckPartsViewComponent } from './containers/employee-check-par
     MaterialModule,
     BrowserAnimationsModule,
     ElModule.forRoot(),
+    ClickOutsideModule,
     UnileverUiModule,
     BekzhanModule,
     YerbolModule,

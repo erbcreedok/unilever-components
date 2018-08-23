@@ -7,7 +7,7 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 })
 export class NotificationComponent implements OnInit {
 
-  @Input() status: string;
+  @Input() type: string;
 
   constructor() { }
 

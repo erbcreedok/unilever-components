@@ -1,17 +1,23 @@
 @import "../../../scss/1-abstracts/variables";
 :host {
-  background-color: #fff;
-  border-bottom: 1px solid $blue-gray-4;
+  width: 100%;
+  max-width: inherit;
 }
 .right-offset {
   padding-right: 40px;
 }
-
+.header-container {
+  position: fixed;
+  max-width: inherit;
+  width: inherit;
+  right: 0;
+  background-color: #fff;
+  border-bottom: 1px solid $blue-gray-4;
+}
 .notification-button {
   height: 35px;
   color: #b6c7d2;
   font-size: 2rem;
-  margin-right: 3rem;
   position: relative;
   background-color: #fff;
   padding: 0.4rem 1rem 0;
@@ -30,4 +36,22 @@
     line-height: 2.15rem;
     background-color: #d55742;
   }
+}
+.notification-wrapper {
+  position: relative;
+  margin-right: 3rem;
+}
+.notifications-panel {
+  position: absolute;
+  right: 0;
+  top: 100%;
+}
+.new-task-wrapper {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 5px;
+  max-height: 100vh;
+  padding-bottom: 70px;
+  overflow: scroll;
 }

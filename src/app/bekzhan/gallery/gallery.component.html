@@ -1,0 +1,50 @@
+<div class="d-flex">
+  <div class="box bordered task-types mr-4" style="min-width: 200px">
+    <h3 class="color-gray mb-4">Город</h3>
+    <ul class="color-headings font-weight-500 pl-0">
+      <li class="mb-3 active">Астана</li>
+      <li class="mb-3">Алматы</li>
+      <li class="mb-3">
+      	Атырау
+      	<ul class="color-headings font-weight-500 pl-5 pt-3">
+      		<li class="mb-3 active">Магнум</li>
+      		<li class="mb-3">Скиф</li>
+      		<li class="mb-3">Рамстор</li>
+      		<li class="mb-3">Анвар</li>
+      	</ul>
+      </li>
+      <li class="mb-3">Актау</li>
+    </ul>
+  </div>
+
+    <div class="box bordered p-5">
+	  <div class="d-flex align-items-center justify-content-between flex-wrap mb-4">
+	    <h3>Фотоотчеты</h3>
+
+	    <div>
+	    	<el-button>
+		      Скачать все архивом
+		    </el-button>
+		    <el-button>
+		      <i class="fas fa-filter"></i>
+		      Фильтр
+		    </el-button>
+	    </div>
+
+	    <div class="w-100 d-flex" style="margin-top: 2rem;">
+	    	<p style="margin-right: 20px;"><span class="fs-12">Сеть</span> <span class="color-headings  pl-3">Магнум</span></p>
+	    	<p style="margin-right: 20px;"><span class="fs-12">Дверь</span> <span class="color-headings  pl-3">Все</span></p>
+	    	<p style="margin-right: 20px;"><span class="fs-12">Период</span> <span class="color-headings  pl-3">1 Июль - 29 Август</span></p>
+	    	<p style="margin-right: 20px;"><span class="fs-12">Категория</span> <span class="color-headings  pl-3">Зубная паста</span></p>
+	    	<p style="margin-right: 20px;"><span class="fs-12">Брэнд</span> <span class="color-headings  pl-3">Head&Shoulders</span></p>
+	    </div>
+
+	    <div class="w-100 row">
+	    	<app-gallery-item class="col-4"></app-gallery-item>
+	    	<app-gallery-item class="col-4"></app-gallery-item>
+	    	<app-gallery-item class="col-4"></app-gallery-item>
+	    	<app-gallery-item class="col-4"></app-gallery-item>
+	    </div>
+	  </div>
+	</div>
+</div>

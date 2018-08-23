@@ -1,6 +1,3 @@
-.color-headings {
-  color: $headings-color;
-}
 .color-primary {
   color: $primary;
 }
@@ -31,6 +28,9 @@
 .color-headings {
   color: $headings-color !important;
 }
+.color-blue-light {
+  color: $blue-light;
+}
 .bg-success {
   background-color: $success !important;
 }
@@ -49,7 +49,6 @@
 .bg-light-gray {
   background-color: $light-gray !important;
 }
-
 .border-blue-gray {
   border-color: $blue-gray-4 !important;
 }

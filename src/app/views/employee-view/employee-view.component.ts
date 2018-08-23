@@ -13,9 +13,9 @@ export class EmployeeViewComponent implements OnInit, OnDestroy {
 
 
   links = [
-    {label: 'Задачи', link: 'tasks'},
     {label: 'Промоактивности', link: 'promoactivities'},
-    {label: 'Проверка долей', link: 'check-parts'}
+    {label: 'Проверка долей', link: 'check-parts'},
+    {label: 'Дополнительные задачи', link: 'tasks'},
   ];
   selectedPath: string;
   id: number;

@@ -1,0 +1,43 @@
+<div class="account-settings">
+  <el-form label-width="0" label-position="top">
+
+    <div class="account-settings-top">
+      <el-form-item label="Имя">
+        <el-input formControlName="fname" [model]="input" value="Айдос"></el-input>
+      </el-form-item>
+
+      <el-form-item label="Фамилия">
+        <el-input formControlName="lname" [model]="input" value="Курмашев"></el-input>
+      </el-form-item>
+
+      <el-form-item label="Адрес почты">
+        <el-input formControlName="mail" [model]="input" value="Курмашев"></el-input>
+      </el-form-item>
+
+      <el-form-item label="Номер телефона">
+        <el-input formControlName="phone" [model]="input" value="Курмашев"></el-input>
+      </el-form-item>
+    </div>
+
+    <hr>
+
+    <div class="account-settings-bottom">
+
+      <div class="mb-4">
+        <label for="">Логин</label>
+        <p class="fs-14 mb-0" style="color: #000;">aidos.kurmashev</p>
+      </div>
+
+      <el-form-item label="Номер телефона">
+        <el-input formControlName="password" native-type="password" value="Курмашев"></el-input>
+      </el-form-item>
+
+      <div class="d-inline-block pr-2 w-50">
+        <button class="btn btn-gray w-100">Закрыть</button>
+      </div>
+      <div class="d-inline-block pl-2 w-50">
+        <button class="btn btn-blue w-100">Изменить</button>
+      </div>
+    </div>
+  </el-form>
+</div>

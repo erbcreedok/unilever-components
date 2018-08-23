@@ -2,29 +2,47 @@
   bekzhan works!
 
   <app-tabs>
-    <app-tab [tabTitle]="'People '">
+    <app-tab [title]="'People '">
       <h3>List of People</h3>
       <hr />
       <button class="btn btn-default" (click)="onOpenAbout()"><i class="glyphicon glyphicon-question-sign"></i> About this</button>
     </app-tab>
-    <app-tab [tabTitle]="'ARr '">
+    <app-tab [title]="'ARr '">
       asd
     </app-tab>
-    <app-tab [tabTitle]="'asdq'">
+    <app-tab [title]="'asdq'">
       <h3>List of Peopleasda</h3>
       <hr />
       <button class="btn btn-default" (click)="onOpenAbout()"><i class="glyphicon glyphicon-question-sign"></i> About this</button>
     </app-tab>
   </app-tabs>
 
-  <app-profile-notifications></app-profile-notifications>
+  <div class="box mb-3">
+    <app-profile-notifications></app-profile-notifications>
+  </div>
 
-  <app-new-task></app-new-task>
+  <div class="box mb-3">
+    <app-new-task></app-new-task>
+  </div>
 
-  <app-task-filter></app-task-filter>
-  <app-proverka-dolei-filter></app-proverka-dolei-filter>
-  <app-account-settings></app-account-settings>
-  <app-gallery-filter></app-gallery-filter>
-  <app-tasks-inner></app-tasks-inner>
+  <div class="box mb-3">
+    <app-task-filter></app-task-filter>
+  </div>
+
+  <div class="box mb-3">
+    <app-proverka-dolei-filter></app-proverka-dolei-filter>
+  </div>
+
+  <div class="box mb-3">
+    <app-account-settings></app-account-settings>
+  </div>
+
+  <div class="box mb-3">
+    <app-gallery-filter></app-gallery-filter>
+  </div>
+
+  <div class="box mb-3">
+    <app-gallery></app-gallery>
+  </div>
 
 </div>

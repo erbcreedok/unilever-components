@@ -2,10 +2,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tab',
-  styles: [
-    `
-  `
-  ],
+  styles: [],
   template: `
     <div [hidden]="!active" class="pane">
       <ng-content></ng-content>
@@ -13,7 +10,7 @@ import { Component, Input } from '@angular/core';
   `
 })
 export class TabComponent {
-  @Input('tabTitle') title: string;
+  @Input() title: string;
   @Input() active = false;
   @Input() template;
   @Input() dataContext;

@@ -1,0 +1,18 @@
+<ngx-datatable
+        class="fullscreen shelled-table"
+        [rows]="rows"
+        [summaryHeight]="288"
+        [columns]="columns"
+        [scrollbarV]="true"
+        [scrollbarH]="true"
+        [rowHeight]="38"
+        [headerHeight]="38"
+        [el-loading]="loading"
+        [text]="'Загрузка данных'"
+>
+  <ng-template #cellTemplate ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row" let-group="group">
+    <div [ngClass]="{'danger': value < 0}">
+      {{value}}
+    </div>
+  </ng-template>
+</ngx-datatable>

@@ -1,8 +1,15 @@
 @import "../../../scss/1-abstracts/variables";
 
 :host {
+  height: 100vh;
+  position: relative;
+}
+.aside-container {
+  height: 100%;
+  width: inherit;
+  position: fixed;
   background-color: #ffffff;
-  border-right: 1px solid $blue-gray-4;
+  border-right: 1px solid #dfe2e5;
 }
 .left-offset {
   padding-left: 30px;

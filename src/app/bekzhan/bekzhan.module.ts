@@ -15,6 +15,8 @@ import { ProverkaDoleiFilterComponent } from './proverka-dolei-filter/proverka-d
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { GalleryFiilterComponent } from './gallery-fiilter/gallery-fiilter.component';
 import { TasksInnerComponent } from './tasks-inner/tasks-inner.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { GalleryItemComponent } from './gallery-item/gallery-item.component';
 
 @NgModule({
   imports: [
@@ -22,7 +24,7 @@ import { TasksInnerComponent } from './tasks-inner/tasks-inner.component';
     MaterialModule,
     ElModule.forRoot()
   ],
-  declarations: [BekzhanComponent, TabsComponent, TabComponent, ProfileNotificationsComponent, NotificationComponent, NewTaskComponent, TaskFilterComponent, ProverkaDoleiFilterComponent, AccountSettingsComponent, GalleryFiilterComponent, TasksInnerComponent],
+  declarations: [BekzhanComponent, TabsComponent, TabComponent, ProfileNotificationsComponent, NotificationComponent, NewTaskComponent, TaskFilterComponent, ProverkaDoleiFilterComponent, AccountSettingsComponent, GalleryFiilterComponent, TasksInnerComponent, GalleryComponent, GalleryItemComponent],
   exports: [BekzhanComponent]
 })
 export class BekzhanModule { }
