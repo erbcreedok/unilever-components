@@ -13,6 +13,7 @@ import { MaterialModule } from '../material/material.module';
 import { MAT_DATE_LOCALE } from '@angular/material';
 import { CheckPartsTableComponent } from './check-parts-table/check-parts-table.component';
 import { NotificationComponent } from './notification/notification.component';
+import { GalleryItemComponent } from './gallery-item/gallery-item.component';
 
 @NgModule({
   imports: [
@@ -29,14 +30,16 @@ import { NotificationComponent } from './notification/notification.component';
     PromoactivitiesBarChartComponent,
     PromoactivitiesDonutChartComponent,
     CheckPartsTableComponent,
-    NotificationComponent
+    NotificationComponent,
+    GalleryItemComponent
   ],
   exports: [
     TaskTableComponent,
     PromoactivitiesBarChartComponent,
     PromoactivitiesDonutChartComponent,
     CheckPartsTableComponent,
-    NotificationComponent
+    NotificationComponent,
+    GalleryItemComponent
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'ru-RU'},

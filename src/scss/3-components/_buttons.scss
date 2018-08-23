@@ -2,7 +2,11 @@
   outline: none;
   padding: 6px 20px;
   min-height: 35px;
+  &.py-def {
+    padding: 6px;
+  }
 }
+
 .el-button--success {
   background-color: $green-light;
   border-color: $green-light;

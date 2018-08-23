@@ -13,6 +13,7 @@ import {OtherTasksViewComponent} from './views/other-tasks-view/other-tasks-view
 import {TasksComponent} from './containers/tasks/tasks.component';
 import {ContactsViewComponent} from './views/contacts-view/contacts-view.component';
 import {AnalyticsViewComponent} from './views/analytics-view/analytics-view.component';
+import {GalleryViewComponent} from './views/gallery-view/gallery-view.component';
 
 export const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -44,6 +45,7 @@ export const appRoutes: Routes = [
         {path: 'check-parts', component: EmployeeCheckPartsViewComponent},
         {path: 'additional', component: EmployeeTasksViewComponent}
     ]},
+    { path: 'gallery', component: GalleryViewComponent, children: []},
     { path: 'bekzhan', component: BekzhanComponent },
     { path: 'yerbol', component: YerbolComponent },
     { path: 'no-route', component: PageNotFoundComponent },

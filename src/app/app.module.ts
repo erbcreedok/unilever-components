@@ -29,6 +29,7 @@ import { MyTasksViewComponent } from './views/my-tasks-view/my-tasks-view.compon
 import { OtherTasksViewComponent } from './views/other-tasks-view/other-tasks-view.component';
 import { ContactsViewComponent } from './views/contacts-view/contacts-view.component';
 import { AnalyticsViewComponent } from './views/analytics-view/analytics-view.component';
+import { GalleryViewComponent } from './views/gallery-view/gallery-view.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { AnalyticsViewComponent } from './views/analytics-view/analytics-view.co
     OtherTasksViewComponent,
     ContactsViewComponent,
     AnalyticsViewComponent,
+    GalleryViewComponent,
   ],
   imports: [
     BrowserModule,
