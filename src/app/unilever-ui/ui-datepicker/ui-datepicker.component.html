@@ -1,0 +1,5 @@
+<mat-form-field (click)="picker.open()" appearance="outline" >
+  <input matInput [matDatepicker]="picker" placeholder="Выберите дату" disabled>
+  <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker disabled="false"></mat-datepicker>
+</mat-form-field>

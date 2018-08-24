@@ -1,18 +1,18 @@
 <div *ngIf="status === 'active'; else vacation" #active class="color-active">
   <i class="ui-icon icon-office-worker"></i>
-  <span class="underline-hover">Активен</span>
+  <span>Активен</span>
 </div>
 
 <div *ngIf="status === 'vacation'; else ill" #vacation class="color-info">
   <i class="ui-icon icon-sun-umbrella"></i>
-  <span class="underline-hover">В отпуске</span>
+  <span>В отпуске</span>
 </div>
 
 <div *ngIf="status === 'ill'; else none" #ill class="color-danger">
   <i class="ui-icon icon-pills"></i>
-  <span class="underline-hover">Заболел</span>
+  <span>Заболел</span>
 </div>
 
 <div *ngIf="!status || status === ''" #none class="color-gray">
-  <span class="underline-hover">Статус не указан</span>
+  <span>Статус не указан</span>
 </div>

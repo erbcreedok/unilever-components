@@ -10,7 +10,23 @@
                 <h2 class="mb-0">Айдос Курмашев</h2>
                 <div class="">Sales Manager</div>
             </div>
-            <ui-profile-status [status]="'vacation'" style="font-size: 1.6rem" class="cursor-pointer mb-3 d-block"></ui-profile-status>
+            <ui-profile-status [status]="'vacation'" style="font-size: 1.6rem" class="cursor-pointer" *ngIf="!canControl"></ui-profile-status>
+            <div ngbDropdown class="d-block mb-3" *ngIf="canControl">
+                <div ngbDropdownToggle>
+                    <ui-profile-status [status]="'vacation'" style="font-size: 1.6rem" class="cursor-pointer underline-hover"></ui-profile-status>
+                </div>
+                <div ngbDropdownMenu >
+                    <button class="dropdown-item cursor-pointer">
+                        <ui-profile-status [status]="'active'"></ui-profile-status>
+                    </button>
+                    <button class="dropdown-item cursor-pointer">
+                        <ui-profile-status [status]="'vacation'"></ui-profile-status>
+                    </button>
+                    <button class="dropdown-item cursor-pointer">
+                        <ui-profile-status [status]="'ill'"></ui-profile-status>
+                    </button>
+                </div>
+            </div>
             <p class="mb-1" style="font-size: 1.2rem">
                 <a href="mailto: somexample@mail.com">somexample@mail.com</a>
             </p>
@@ -19,9 +35,12 @@
             </p>
         </div>
         <div class="mx-3 w-100">
-            <div class="d-flex justify-content-between mb-5">
-                <ui-button class="default">Посмотреть все задачи</ui-button>
-                <ui-button><i class="ui-icon icon-settings-work-tool"></i> Изменить личные данные</ui-button>
+            <div class="d-flex justify-content-between mb-5" *ngIf="canControl">
+                <ui-button [routerLink]="['/tasks']" class="default xl">Посмотреть все задачи</ui-button>
+                <ui-button [routerLink]="['/home/edit']" class="xl"><i class="ui-icon icon-settings-work-tool"></i> Изменить личные данные</ui-button>
+            </div>
+            <div class="d-flex justify-content-between mb-5" *ngIf="!canControl">
+                <ui-button [routerLink]="['/tasks/other']" class="default xl">Посмотреть все задачи</ui-button>
             </div>
             <div class="d-flex justify-content-between icon-circles flex-wrap">
                 <ui-icon-circle [icon]="'ui-icon icon-clipboards'" class="mb-4">

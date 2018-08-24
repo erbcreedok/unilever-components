@@ -1,5 +1,5 @@
 <div class="account-settings">
-  <el-form label-width="0" label-position="top">
+  <el-form label-width="0" label-position="top" >
 
     <div class="account-settings-top">
       <el-form-item label="Имя">
@@ -24,7 +24,7 @@
     <div class="account-settings-bottom">
 
       <div class="mb-4">
-        <label for="">Логин</label>
+        <label>Логин</label>
         <p class="fs-14 mb-0" style="color: #000;">aidos.kurmashev</p>
       </div>
 
@@ -33,10 +33,14 @@
       </el-form-item>
 
       <div class="d-inline-block pr-2 w-50">
-        <button class="btn btn-gray w-100">Закрыть</button>
+        <ui-button class="default d-block" (click)="handleCancel()">
+          Закрыть
+        </ui-button>
       </div>
-      <div class="d-inline-block pl-2 w-50">
-        <button class="btn btn-blue w-100">Изменить</button>
+      <div class="d-inline-block pl-2 w-50" (click)="handleSubmit()">
+        <ui-button class="primary d-block">
+          Изменить
+        </ui-button>
       </div>
     </div>
   </el-form>

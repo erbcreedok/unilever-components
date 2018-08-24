@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GalleryItemComponent } from './gallery-item.component';
+import { UiDatepickerComponent } from './ui-datepicker.component';
 
-describe('GalleryItemComponent', () => {
-  let component: GalleryItemComponent;
-  let fixture: ComponentFixture<GalleryItemComponent>;
+describe('UiDatepickerComponent', () => {
+  let component: UiDatepickerComponent;
+  let fixture: ComponentFixture<UiDatepickerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GalleryItemComponent ]
+      declarations: [ UiDatepickerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GalleryItemComponent);
+    fixture = TestBed.createComponent(UiDatepickerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

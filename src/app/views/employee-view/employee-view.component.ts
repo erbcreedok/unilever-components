@@ -24,7 +24,6 @@ export class EmployeeViewComponent implements OnInit, OnDestroy {
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    console.log(this.router);
     this.selectedPath = this.route.snapshot.firstChild.url[0].path;
     this.subscriptions.push(
         this.router.events.subscribe(() => {

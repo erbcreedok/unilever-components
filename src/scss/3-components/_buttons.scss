@@ -1,3 +1,12 @@
+.btn {
+  &.btn-gray {
+    background-color: $blue-gray-6;
+    color: rgba($blue-dark, .5);
+    font-weight: 500;
+    font-size: 1.4rem;
+  }
+}
+
 .btn, .btn:focus, button, button:focus, .el-button {
   outline: none;
   padding: 6px 20px;
@@ -11,8 +20,9 @@
   background-color: $green-light;
   border-color: $green-light;
   &:focus, &:hover {
-  background: $green-light-1;
-  border-color: $green-light-1;
-  color: #fff;
+    background: $green-light-1;
+    border-color: $green-light-1;
+    color: #fff;
+  }
 }
-}
+

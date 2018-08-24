@@ -23,21 +23,13 @@
           <label>
             Дата начала
           </label>
-          <mat-form-field>
-            <input matInput [matDatepicker]="dateFrom" placeholder="Выберите дату" disabled>
-            <mat-datepicker-toggle matPrefix [for]="dateFrom"></mat-datepicker-toggle>
-            <mat-datepicker #dateFrom disabled="false"></mat-datepicker>
-          </mat-form-field>
+          <ui-datepicker></ui-datepicker>
         </div>
         <div class="d-inline-block w-50 pl-3 mt-2">
           <label>
             Крайний срок
           </label>
-          <mat-form-field>
-            <input matInput [matDatepicker]="dateTo" placeholder="Выберите дату" disabled>
-            <mat-datepicker-toggle matPrefix [for]="dateTo"></mat-datepicker-toggle>
-            <mat-datepicker #dateTo disabled="false"></mat-datepicker>
-          </mat-form-field>
+          <ui-datepicker></ui-datepicker>
         </div>
 
         <div style="margin-top: 3.5rem;margin-bottom: 2rem">
@@ -130,10 +122,10 @@
 
       <div class="new-task-bottom">
         <div class="d-inline-block pr-2 w-50">
-          <button class="btn btn-gray w-100">Отменить</button>
+          <ui-button class="default">Отменить</ui-button>
         </div>
         <div class="d-inline-block pl-2 w-50">
-          <button class="btn btn-blue w-100">Создать задачу</button>
+          <ui-button class="primary">Создать задачу</ui-button>
         </div>
       </div>
     </div>
