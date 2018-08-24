@@ -2,34 +2,71 @@
 	<app-tabs>
 		<app-tab [title]="'Фотоотчеты '">
 			<div class="row gallery-photos">
-				<div class="col-6">
-				    <div class="bg-image-container square"
+				<div class="box-card col-6" #card>
+				    <div (click)="card.toggle1 = true" class="bg-image-container square"
 				         style="background-image: url('../../../assets/img/gallery1.jpg')"
 				    ></div>
-		  		</div>
-		  		<div class="col-6">
-				    <div class="bg-image-container square"
+				  	<el-dialog [title]="'Фотоотчеты'" [(visible)]="card.toggle1"
+				    	[center]="true">
+				    	<div class="bg-image-container square"
+				        	style="width: 100%; background-image: url('../../../assets/img/gallery1.jpg')"
+				    	></div>
+				  	</el-dialog>
+				</div>
+				<div class="box-card col-6" #card>
+				    <div (click)="card.toggle2 = true" class="bg-image-container square"
+				         style="background-image: url('../../../assets/img/gallery2.jpg')"
+				    ></div>
+				  	<el-dialog [title]="'Фотоотчеты'" [(visible)]="card.toggle2"
+				    	[center]="true">
+				    	<div class="bg-image-container square"
+				        	style="width: 100%; background-image: url('../../../assets/img/gallery2.jpg')"
+				    	></div>
+				  	</el-dialog>
+				</div>
+				<div class="box-card col-6" #card>
+				    <div (click)="card.toggle = true" class="bg-image-container square"
+				         style="background-image: url('../../../assets/img/gallery3.jpg')"
+				    ></div>
+				  	<el-dialog [title]="'Фотоотчеты'" [(visible)]="card.toggle"
+				    	[center]="true">
+				    	<div class="bg-image-container square"
+				        	style="width: 100%; background-image: url('../../../assets/img/gallery3.jpg')"
+				    	></div>
+				  	</el-dialog>
+				</div>
+				<div class="box-card col-6" #card>
+				    <div (click)="card.toggle = true" class="bg-image-container square"
 				         style="background-image: url('../../../assets/img/gallery1.jpg')"
 				    ></div>
-		  		</div>
-		  		<div class="col-6">
-				    <div class="bg-image-container square"
-				         style="background-image: url('../../../assets/img/gallery1.jpg')"
+				  	<el-dialog [title]="'Фотоотчеты'" [(visible)]="card.toggle"
+				    	[center]="true">
+				    	<div class="bg-image-container square"
+				        	style="width: 100%; background-image: url('../../../assets/img/gallery1.jpg')"
+				    	></div>
+				  	</el-dialog>
+				</div>
+				<div class="box-card col-6" #card>
+				    <div (click)="card.toggle = true" class="bg-image-container square"
+				         style="background-image: url('../../../assets/img/gallery3.jpg')"
 				    ></div>
-		  		</div>
-		  		<div class="col-6">
-				    <div class="bg-image-container square"
-				         style="background-image: url('../../../assets/img/gallery1.jpg')"
-				    ></div>
-		  		</div>
-		  		<div class="col-6">
-				    <div class="bg-image-container square"
-				         style="background-image: url('../../../assets/img/gallery1.jpg')"
-				    ></div>
-		  		</div>
+				  	<el-dialog [title]="'Фотоотчеты'" [(visible)]="card.toggle"
+				    	[center]="true">
+				    	<div class="bg-image-container square"
+				        	style="width: 100%; background-image: url('../../../assets/img/gallery3.jpg')"
+				    	></div>
+				  	</el-dialog>
+				</div>
+
 			</div>
 		</app-tab>
 		<app-tab [title]="'Коментарии'">
+			<div class="gallery-comments">
+				<p class="fs-14" style="font-weight: 500;">Комментарии к задаче</p>
+				<p class="fs-14" style="color: #354052;">
+					Разнообразный и богатый опыт новая модель организационной деятельности влечет за собой процесс внедрения и модернизации соответствующий условий активизации. С другой стороны реализация намеченных плановых заданий представляет собой интересный эксперимент проверки соответствующий условий активизации.
+				</p>
+			</div>
 		</app-tab>
 	</app-tabs>
 

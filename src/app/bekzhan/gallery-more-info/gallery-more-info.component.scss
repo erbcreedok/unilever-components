@@ -1,11 +1,12 @@
 .box {
+	height: 580px;
 	width: 360px;
 	position: relative;
 	padding: 30px 20px 95px;
 }
 
 .gallery-photos {
-	height: 400px;
+	max-height: 400px;
 	overflow-x: auto;
 	margin: 10px -10px 0;
 
@@ -14,8 +15,16 @@
 
 		.bg-image-container {
 			border-radius: 5px;
+			cursor: pointer;
 		}
 	}
+}
+
+.gallery-comments {
+	max-height: 400px;
+	overflow-x: auto;
+	margin-top: 10px;
+	padding-top: 20px;
 }
 
 :host ::ng-deep app-tabs ul li {
