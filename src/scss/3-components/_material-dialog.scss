@@ -1,0 +1,12 @@
+mat-dialog-container.mat-dialog-container {
+  padding: 50px 12px;
+  background: none;
+  overflow: auto;
+  max-height: 100vh;
+  box-shadow: none;
+}
+.cdk-overlay-dark-backdrop {
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  background-color: rgba(19, 24, 32, 0.8);
+}

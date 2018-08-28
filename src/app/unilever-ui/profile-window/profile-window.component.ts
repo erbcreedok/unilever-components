@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'ui-profile-window',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-window.component.scss']
 })
 export class ProfileWindowComponent implements OnInit {
+
+  @Input() canControl = false;
 
   data: any[] = [
     {

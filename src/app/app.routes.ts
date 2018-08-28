@@ -14,10 +14,13 @@ import {TasksComponent} from './containers/tasks/tasks.component';
 import {ContactsViewComponent} from './views/contacts-view/contacts-view.component';
 import {AnalyticsViewComponent} from './views/analytics-view/analytics-view.component';
 import {GalleryViewComponent} from './views/gallery-view/gallery-view.component';
+import {AccountSettingsModalComponent} from './modals/account-settings-modal/account-settings-modal.component';
 
 export const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', component: HomeViewComponent },
+    { path: 'home', component: HomeViewComponent, children: [
+        {path: 'edit', component: AccountSettingsModalComponent},
+    ]},
     { path: 'employee/:id', component: EmployeeViewComponent, children: [
         {path: '', pathMatch: 'prefix', redirectTo: 'promoactivities'},
         {path: 'tasks', component: EmployeeTasksViewComponent},

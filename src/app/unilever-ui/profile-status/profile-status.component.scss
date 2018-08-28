@@ -3,9 +3,13 @@
 div {
   display: inline-block;
   font-size: inherit;
+  text-decoration: inherit;
   i {
     display: inline-block;
     margin-right: 5px;
     font-size: 1.1em;
+  }
+  span {
+    text-decoration: inherit;
   }
 }

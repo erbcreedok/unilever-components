@@ -22,14 +22,15 @@ import { EmployeePromoactivitiesViewComponent } from './containers/employee-prom
 import { EmployeeCheckPartsViewComponent } from './containers/employee-check-parts-view/employee-check-parts-view.component';
 import { NotificationsPanelComponent } from './containers/notifications-panel/notifications-panel.component';
 import {ClickOutsideModule} from 'ng-click-outside';
-import { NewTaskFormComponent } from './containers/new-task-form/new-task-form.component';
-import { AccountSettingsFormComponent } from './containers/account-settings-form/account-settings-form.component';
+import { NewTaskFormComponent } from './forms/new-task-form/new-task-form.component';
+import { AccountSettingsFormComponent } from './forms/account-settings-form/account-settings-form.component';
 import { TasksViewComponent } from './views/tasks-view/tasks-view.component';
 import { MyTasksViewComponent } from './views/my-tasks-view/my-tasks-view.component';
 import { OtherTasksViewComponent } from './views/other-tasks-view/other-tasks-view.component';
 import { ContactsViewComponent } from './views/contacts-view/contacts-view.component';
 import { AnalyticsViewComponent } from './views/analytics-view/analytics-view.component';
 import { GalleryViewComponent } from './views/gallery-view/gallery-view.component';
+import { AccountSettingsModalComponent } from './modals/account-settings-modal/account-settings-modal.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { GalleryViewComponent } from './views/gallery-view/gallery-view.componen
     ContactsViewComponent,
     AnalyticsViewComponent,
     GalleryViewComponent,
+    AccountSettingsModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +69,7 @@ import { GalleryViewComponent } from './views/gallery-view/gallery-view.componen
     YerbolModule,
     ComponentsModule,
   ],
+  entryComponents: [AccountSettingsFormComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
