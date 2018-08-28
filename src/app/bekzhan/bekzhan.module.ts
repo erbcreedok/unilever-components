@@ -18,6 +18,7 @@ import { TasksInnerComponent } from './tasks-inner/tasks-inner.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryItemComponent } from './gallery-item/gallery-item.component';
 import { GalleryMoreInfoComponent } from './gallery-more-info/gallery-more-info.component';
+import { AuthorizationComponent } from './authorization/authorization.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,7 @@ import { GalleryMoreInfoComponent } from './gallery-more-info/gallery-more-info.
     MaterialModule,
     ElModule.forRoot()
   ],
-  declarations: [BekzhanComponent, TabsComponent, TabComponent, ProfileNotificationsComponent, NotificationComponent, NewTaskComponent, TaskFilterComponent, ProverkaDoleiFilterComponent, AccountSettingsComponent, GalleryFiilterComponent, TasksInnerComponent, GalleryComponent, GalleryItemComponent, GalleryMoreInfoComponent],
+  declarations: [BekzhanComponent, TabsComponent, TabComponent, ProfileNotificationsComponent, NotificationComponent, NewTaskComponent, TaskFilterComponent, ProverkaDoleiFilterComponent, AccountSettingsComponent, GalleryFiilterComponent, TasksInnerComponent, GalleryComponent, GalleryItemComponent, GalleryMoreInfoComponent, AuthorizationComponent],
   exports: [BekzhanComponent]
 })
 export class BekzhanModule { }
