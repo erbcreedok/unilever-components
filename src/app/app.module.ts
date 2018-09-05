@@ -57,9 +57,6 @@ import { AccountSettingsModalComponent } from './modals/account-settings-modal/a
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(
-        appRoutes, { enableTracing: true }
-    ),
     MaterialModule,
     BrowserAnimationsModule,
     ElModule.forRoot(),
@@ -68,6 +65,9 @@ import { AccountSettingsModalComponent } from './modals/account-settings-modal/a
     BekzhanModule,
     YerbolModule,
     ComponentsModule,
+    RouterModule.forRoot(
+        appRoutes, { enableTracing: true }
+    ),
   ],
   entryComponents: [AccountSettingsFormComponent],
   providers: [],
