@@ -5,21 +5,6 @@
 	padding: 30px 20px 95px;
 }
 
-.gallery-photos {
-	max-height: 400px;
-	overflow-x: auto;
-	margin: 10px -10px 0;
-
-	.col-6 {
-		padding: 20px 10px 0;
-
-		.bg-image-container {
-			border-radius: 5px;
-			cursor: pointer;
-		}
-	}
-}
-
 .gallery-comments {
 	max-height: 400px;
 	overflow-x: auto;
@@ -41,4 +26,40 @@ button {
 	color: rgba(#354052, 0.6);
 	background-color: #eff3f6;
 	transform: translateX(-50%);
+}
+
+
+::ng-deep .ngx-gallery-thumbnail-size-cover .ngx-gallery-thumbnails .ngx-gallery-thumbnail, ::ng-deep .ngx-gallery-thumbnails .ngx-gallery-thumbnail {
+	margin-top: 20px;
+	border-radius: 5px;
+	height: 0 !important;
+	top: inherit !important;
+	padding-bottom: calc(50% - 10px);
+	width: calc(50% - 10px) !important;
+}
+
+::ng-deep .ngx-gallery-thumbnails .ngx-gallery-thumbnail {
+	position: inherit !important;
+}
+
+::ng-deep .ngx-gallery-thumbnails-wrapper {
+	position: initial !important;
+}
+
+::ng-deep .ngx-gallery-thumbnails {
+	display: flex;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    max-height: 400px;
+    height: auto !important;
+    margin-left: 0 !important;
+	position: inherit !important;
+    justify-content: space-between;
+}
+
+ngx-gallery ::ng-deep .ngx-gallery-layout {
+}
+
+mgx-gallery ::ng-deep ngx-gallery-thumbnails {
+	margin: 0 !important;
 }

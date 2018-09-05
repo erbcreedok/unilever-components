@@ -20,11 +20,14 @@ import { GalleryItemComponent } from './gallery-item/gallery-item.component';
 import { GalleryMoreInfoComponent } from './gallery-more-info/gallery-more-info.component';
 import { AuthorizationComponent } from './authorization/authorization.component';
 
+import { NgxGalleryModule } from 'ngx-gallery';
+
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
-    ElModule.forRoot()
+    ElModule.forRoot(),
+    NgxGalleryModule
   ],
   declarations: [BekzhanComponent, TabsComponent, TabComponent, ProfileNotificationsComponent, NotificationComponent, NewTaskComponent, TaskFilterComponent, ProverkaDoleiFilterComponent, AccountSettingsComponent, GalleryFiilterComponent, TasksInnerComponent, GalleryComponent, GalleryItemComponent, GalleryMoreInfoComponent, AuthorizationComponent],
   exports: [BekzhanComponent]
