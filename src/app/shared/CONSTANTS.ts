@@ -5,3 +5,6 @@ export const GREEN = '#02a785';
 export const RED_RGB = '213, 87, 56';
 export const YELLOW_RGB = '240, 173, 28';
 export const GREEN_RGB = '2, 167, 133';
+
+
+export const BASE_URL = 'http://185.22.64.49';

@@ -35,7 +35,6 @@ export class CheckPartsTableComponent implements OnInit {
         newItems.push({name: items[i % items.length], prop: i, cellTemplate: this.cellTemplate});
       }
       this.rows = newRows;
-      console.log(this.columns);
       this.columns = [
         this.initCol,
         ...newItems

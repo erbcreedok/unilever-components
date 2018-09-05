@@ -1,0 +1,58 @@
+@import "../../../scss/1-abstracts/variables";
+
+.authorization-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: #eff3f6;
+
+  .authorization {
+    top: 50%;
+    left: 50%;
+    height: 360px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    .authorization-left {
+      width: 300px;
+      height: 100%;
+      padding: 40px 27px 0;
+      background-color: #fff;
+      border-radius: 4px 0 0 4px;
+
+      img {
+        top: -20px;
+        left: 27px;
+        width: 40px;
+        position: absolute;
+      }
+    }
+    .authorization-right {
+      color: #fff;
+      width: 440px;
+      height: 100%;
+      padding-top: 250px;
+      padding-left: 30px;
+      border-radius: 0 4px 4px 0;
+      background-color: $blue;
+      background-size: cover;
+      background-position: center;
+      background-image: url("../../../assets/img/auth-bg.jpg");
+    }
+  }
+
+  hr {
+    margin: 1.7rem 0;
+    border-top: 2px solid #e6eaee;
+  }
+
+  el-form-item ::ng-deep .el-form-item {
+    margin-bottom: 11px;
+  }
+  el-form-item ::ng-deep .el-form-item__label {
+    padding: 0;
+    color: #7f8fa4;
+    font-size: 12px;
+    line-height: 20px;
+  }
+}

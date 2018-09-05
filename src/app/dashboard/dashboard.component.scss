@@ -1,0 +1,14 @@
+app-aside {
+  width: 225px;
+  flex: 225px 0 0;
+  min-height: 100vh;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+app-header {
+  min-height: 65px;
+  display: block;
+  position: relative;
+  z-index: 1;
+}

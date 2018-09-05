@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ElModule } from 'element-angular/release/element-angular.module';
 import 'element-angular/theme/index.css';
 import { CommonModule } from '@angular/common';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { TaskTableComponent } from './task-table/task-table.component';
-import { UnileverUiModule } from '../unilever-ui/unilever-ui.module';
+import { UnileverUiModule } from '../shared/unilever-ui/unilever-ui.module';
 import { PromoactivitiesBarChartComponent } from './promoactivities-bar-chart/promoactivities-bar-chart.component';
 import { ChartjsModule } from '@ctrl/ngx-chartjs';
 import { PromoactivitiesDonutChartComponent } from './promoactivities-donut-chart/promoactivities-donut-chart.component';
-import { MaterialModule } from '../material/material.module';
+import { MaterialModule } from '../shared/material/material.module';
 import { MAT_DATE_LOCALE } from '@angular/material';
 import { CheckPartsTableComponent } from './check-parts-table/check-parts-table.component';
 import { NotificationComponent } from './notification/notification.component';
@@ -18,7 +17,6 @@ import { NotificationComponent } from './notification/notification.component';
   imports: [
     NgxDatatableModule,
     CommonModule,
-    BrowserAnimationsModule,
     ElModule.forRoot(),
     ChartjsModule,
     UnileverUiModule,

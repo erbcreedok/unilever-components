@@ -1,0 +1,39 @@
+@import '../../../../scss/1-abstracts/variables';
+
+:host {
+  display: block;
+  min-width: 280px;
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow: auto;
+}
+a {
+  color: $default;
+}
+.e-22 {
+  width: 104px;
+}
+.label {
+  font-size: 1.2rem;
+  width: 72px;
+  display: inline-block;
+  margin-right: 9px;
+  margin-bottom: 0;
+}
+.digit {
+  font-size: 2rem;
+  display: inline-block;
+  margin-bottom: 0;
+}
+:host /deep/ .el-button {
+  height: 50px;
+  border: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  color: $blue-gray-2;
+  transition: .2s;
+  &:hover {
+    background-color: $blue;
+    color: #fff;
+  }
+}

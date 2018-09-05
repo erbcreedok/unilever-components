@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { YerbolComponent } from './yerbol.component';
+import {YerbolRoutingModule} from './yerbol-routing.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    YerbolRoutingModule
   ],
   declarations: [YerbolComponent],
   exports: [YerbolComponent]
