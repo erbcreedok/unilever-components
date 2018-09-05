@@ -32,6 +32,7 @@
               "node_modules/@fortawesome/fontawesome-free/css/all.css",
               "src/assets/fonts/HelveticaNeue/stylesheet.css",
               "src/assets/fonts/icomoon/icomoon.css",
+              "node_modules/font-awesome/css/font-awesome.css",
               "src/scss/styles.scss"
             ],
             "scripts": [
