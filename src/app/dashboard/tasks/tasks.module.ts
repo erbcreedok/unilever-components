@@ -11,17 +11,17 @@ import { TasksRoutingModule } from './tasks-routing.module';
 import { TasksComponent } from './tasks.component';
 import { MyTasksComponent } from './my-tasks/my-tasks.component';
 import { OtherTasksComponent } from './other-tasks/other-tasks.component';
+import { MyTasksTableComponent } from './my-tasks/my-tasks-table/my-tasks-table.component';
+import { TaskComponent } from './task/task.component';
 
 @NgModule({
   imports: [
     CommonModule,
     UnileverUiModule,
-    MaterialModule,
     ComponentsModule,
     ContainersModule,
-    ElModule.forRoot(),
     TasksRoutingModule
   ],
-  declarations: [TasksComponent, MyTasksComponent, OtherTasksComponent]
+  declarations: [TasksComponent, MyTasksComponent, OtherTasksComponent, MyTasksTableComponent, TaskComponent]
 })
 export class TasksModule { }

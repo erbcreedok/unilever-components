@@ -1,0 +1,40 @@
+<table class="ui-datatable" mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="city">
+    <th mat-header-cell *matHeaderCellDef> Город </th>
+    <td mat-cell *matCellDef="let task"> {{task.door.city.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> Загаловок </th>
+    <td mat-cell *matCellDef="let task"> {{task.door.city.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="door">
+    <th mat-header-cell *matHeaderCellDef> Торговая точка </th>
+    <td mat-cell *matCellDef="let task"> {{task.door.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="startDate">
+    <th mat-header-cell *matHeaderCellDef> Дата создания </th>
+    <td mat-cell *matCellDef="let task"> {{task.startDate}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="endDate">
+    <th mat-header-cell *matHeaderCellDef> Крайний срок </th>
+    <td mat-cell *matCellDef="let task"> {{task.endDate}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="checking">
+    <th mat-header-cell *matHeaderCellDef> Проверяющий </th>
+    <td mat-cell *matCellDef="let task"> <span class="color-headings" *ngIf="task.checking">{{task.checking.firstName}}  {{task.checking.lastName}}</span> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action" stickyEnd>
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let task">
+      <div class="action"><a [routerLink]="['/dashboard/tasks', 'id', task.id]" class="chevron">❯</a></div>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

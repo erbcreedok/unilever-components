@@ -30,4 +30,7 @@
   :host.success & {
     @include icon-theme($green);
   }
+  :host.l-placeholder & {
+    @include icon-theme($bg-placeholder);
+  }
 }

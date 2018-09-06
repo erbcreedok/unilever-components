@@ -1,0 +1,20 @@
+@import '../../../../../scss/1-abstracts/_variables.scss';
+ul {list-style: none}
+li::before {content: "•"; color: $blue-gray-2;  display: inline-block; width: 1em;  margin-right: 1.5rem}
+.task-types {
+  padding: 20px 0 20px 25px;
+  li {
+    cursor: pointer;
+    &:hover {
+      color: #1f96ef;
+    }
+  }
+  li.active {
+    color: #1f96ef;
+  }
+}
+
+.data-table {
+  display: block;
+  max-height: 500px;
+}

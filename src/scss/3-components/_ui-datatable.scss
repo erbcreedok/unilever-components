@@ -1,0 +1,52 @@
+$border-color: $blue-gray-4;
+$cell-color: $blue-gray-1;
+$header-cell-color: $blue-gray-2;
+$row-background: $white;
+$row-background-hover: $blue-gray-6;
+.ui-datatable {
+  .mat-header-cell, .mat-cell {
+    padding: 15px;
+    &:first-child {
+      padding-left: 30px;
+    }
+    &:last-child {
+      padding-right: 30px;
+    }
+  }
+  .mat-header-cell {
+    color: $header-cell-color;
+    font-weight: 400;
+    font-size: 1.4rem;
+  }
+  .mat-cell {
+    font-size: 1.2rem;
+    font-weight: 300;
+    border-color: $border-color;
+    color: $cell-color;
+  }
+  .mat-header-row, .mat-row {
+    background-color: $row-background;
+    transition: .3s;
+  }
+  .mat-row:hover {
+    background-color: $row-background-hover;
+  }
+  .mat-column-action {
+    a {
+      text-align: center;
+      color: inherit;
+      padding: 10px;
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+      margin: -15px;
+      border-radius: 50%;
+      transition: .3s;
+      background-color: transparent;
+      &:hover {
+        background-color: white;
+      }
+    }
+    margin-right: -10px;
+  }
+}

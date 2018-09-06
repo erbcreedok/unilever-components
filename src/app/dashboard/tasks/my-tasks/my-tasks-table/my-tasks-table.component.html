@@ -1,0 +1,26 @@
+<div class="d-flex">
+  <div class="box bordered task-types mr-4" style="min-width: 210px">
+    <h3 class="color-gray mb-4">Типы задач</h3>
+    <ul class="color-headings font-weight-500 pl-0">
+      <li class="mb-3 active">Промоактивности</li>
+      <li class="mb-3">Проверка долей</li>
+      <li class="mb-3">Сбор цен</li>
+      <li class="mb-3">Дополнительные</li>
+    </ul>
+  </div>
+  <div class="w-100 box-bordered" style="max-width: calc(100% - 225px);">
+    <div class="box p-5">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <h2>Все задачи</h2>
+        <el-button>
+          <i class="fas fa-filter"></i>
+          Фильтр
+        </el-button>
+      </div>
+      <div class="data-table-container mx--5" [el-loading]="isLoading()">
+        <ui-data-table class="data-table" [displayedColumns]="displayedColumns" [dataSource]="tasks">
+        </ui-data-table>
+      </div>
+    </div>
+  </div>
+</div>

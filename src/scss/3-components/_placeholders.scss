@@ -1,0 +1,26 @@
+$bg-placeholder: $bg-placeholder-o;
+$placeholder-radius: 3px;
+
+.bg-placeholder {
+  background-color: $bg-placeholder;
+}
+.text-placeholder {
+  background-color: $bg-placeholder;
+  border-radius: $placeholder-radius;
+}
+h2.text-placeholder{
+  min-height: 24px;
+}
+h5.text-placeholder {
+  min-height: 15px;
+}
+p.text-placeholder {
+  min-height: 16px;
+}
+.btn.btn-placeholder {
+  background-color: $bg-placeholder;
+}
+
+.blur-placeholder {
+  filter: blur(4px) grayscale(.6);
+}

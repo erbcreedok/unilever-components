@@ -1,4 +1,5 @@
 import {Component, isDevMode, OnInit} from '@angular/core';
+import {AuthService} from '../../providers/auth/auth.service';
 @Component({
   selector: 'app-aside',
   templateUrl: './aside.component.html',
@@ -11,5 +12,6 @@ export class AsideComponent implements OnInit {
   ngOnInit() {
     console.log(isDevMode());
   }
+
 
 }

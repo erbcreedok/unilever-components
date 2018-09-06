@@ -1,36 +1,41 @@
-<div class="authorization-container">
+<div class="authorization-container d-flex align-items-center justify-content-center">
   <div class="d-flex authorization">
-    <div class="authorization-left">
-      <img src="../../../assets/img/auth-logo.png" alt="Логотип" />
+    <div class="authorization-left"
 
-      <p class="fs-20 color-headings">Вход в систему</p>
+    >
+      <img src="../../../assets/img/unilever-logo.png" alt="Логотип" />
+      <div [el-loading]="isLoading()">
+        <p class="fs-20 color-headings">Вход в систему</p>
 
-      <el-form label-width="0" label-position="top" (submit)="onFormSubmit($event)">
+        <el-form label-width="0"
+                 label-position="top"
+                 (submit)="onFormSubmit($event)"
+                 [formGroup]="loginForm"
+        >
+          <el-form-item label="Логин" [required]="true">
+            <el-input formControlName="email" placeholder="Введите логин"></el-input>
+          </el-form-item>
 
-        <el-form-item label="Логин">
-          <el-input formControlName="login" placeholder="Введите логин"></el-input>
-        </el-form-item>
+          <el-form-item label="Пароль" [required]="true">
+            <el-input formControlName="password" native-type="password" placeholder="Введите пароль"></el-input>
+          </el-form-item>
 
-        <el-form-item label="Пароль">
-          <el-input formControlName="password" native-type="password" placeholder="Введите пароль"></el-input>
-        </el-form-item>
+          <button class="btn btn-blue w-100 mt-2" type="submit">Войти</button>
 
-        <button class="btn btn-blue w-100 mt-2" type="submit">Войти</button>
+          <hr>
 
-        <hr>
+          <div class="fs-12" style="line-height: 1.33;">
+            Если у вас проблемы со входом, напишите <a href="mailto: support@unilever.com">support@unilever.com</a>
+          </div>
 
-        <div class="fs-12" style="line-height: 1.33;">
-          Если у вас проблемы со входом, напишите <a href="mailto: support@unilever.com">support@unilever.com</a>
-        </div>
-
-      </el-form>
-
-
-
+        </el-form>
+      </div>
     </div>
-    <div class="authorization-right">
-      <div class="fs-20 mb-3">Добро пожаловать в Юнилевер!</div>
-      <div>Управляйте всеми задачами в удобном интерфейсе</div>
+    <div class="authorization-right d-sm-flex align-items-end d-none">
+      <div class="">
+        <div class="fs-20 mb-3">Добро пожаловать в Юнилевер!</div>
+        <div>Управляйте всеми задачами в удобном интерфейсе</div>
+      </div>
     </div>
   </div>
 </div>

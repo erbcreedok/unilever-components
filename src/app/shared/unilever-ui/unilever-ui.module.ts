@@ -18,6 +18,7 @@ import { UiButtonTabComponent } from './ui-button-tabs/ui-button-tab.component';
 import { RouterModule } from '@angular/router';
 import { UiGalleryItemComponent } from './ui-gallery-item/ui-gallery-item.component';
 import { UiDatepickerComponent } from './ui-datepicker/ui-datepicker.component';
+import { UiDataTableComponent } from './ui-data-table/ui-data-table.component';
 
 @NgModule({
   imports: [
@@ -41,6 +42,7 @@ import { UiDatepickerComponent } from './ui-datepicker/ui-datepicker.component';
     UiButtonTabComponent,
     UiGalleryItemComponent,
     UiDatepickerComponent,
+    UiDataTableComponent,
   ],
   exports: [
     ElModule,
@@ -57,6 +59,8 @@ import { UiDatepickerComponent } from './ui-datepicker/ui-datepicker.component';
     UiButtonTabComponent,
     UiGalleryItemComponent,
     UiDatepickerComponent,
+    UiDataTableComponent,
+    MaterialModule,
   ]
 })
 export class UnileverUiModule { }

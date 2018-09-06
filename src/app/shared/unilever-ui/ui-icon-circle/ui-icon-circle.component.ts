@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class UiIconCircleComponent implements OnInit {
 
-  @Input() icon: string;
+  @Input() icon = '';
 
   constructor() { }
 

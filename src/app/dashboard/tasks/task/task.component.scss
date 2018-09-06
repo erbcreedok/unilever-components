@@ -1,0 +1,43 @@
+:host {
+  display: block;
+  padding: 35px 20px;
+}
+
+.task-inner-left {
+  padding: 20px;
+  min-width: 200px;
+  i {
+    color: #b6c7d2;
+    margin-right: 5px;
+  }
+
+  button {
+    margin: 20px 0;
+  }
+
+  .btn-in-process {
+    color: #fff;
+    font-size: 9px;
+    padding: 3px 7px 2px;
+    min-height: inherit;
+    text-transform: uppercase;
+    background-color: #d55742;
+  }
+}
+
+.task-inner-right {
+  padding: 20px 30px;
+
+  button {
+    color: #fff;
+    width: 125px;
+    padding: 0;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 20px;
+  }
+}
+
+.fw-500 {
+  font-weight: 500;
+}

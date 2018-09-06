@@ -25,11 +25,11 @@ export class TasksComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.selectedPath = this.getSelectedPath();
-    this.subscriptions.push(
+    this.subscriptions = [
         this.router.events.subscribe(() => {
           this.selectedPath = this.getSelectedPath();
         })
-    );
+    ];
   }
 
   getSelectedPath(): string {

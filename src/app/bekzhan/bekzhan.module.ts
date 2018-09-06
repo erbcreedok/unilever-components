@@ -29,6 +29,7 @@ import { NgxGalleryModule } from 'ngx-gallery';
     MaterialModule,
     ElModule.forRoot(),
     BekzhanRoutingModule,
+    NgxGalleryModule,
   ],
   declarations: [
     BekzhanComponent,
@@ -46,7 +47,6 @@ import { NgxGalleryModule } from 'ngx-gallery';
     GalleryItemComponent,
     GalleryMoreInfoComponent,
     AuthorizationComponent,
-    NgxGalleryModule
   ],
   exports: [BekzhanComponent]
 })
