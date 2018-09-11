@@ -12,8 +12,8 @@ import {Router} from '@angular/router';
 export class LoginViewComponent implements OnInit {
 
   loginForm = new FormGroup({
-    email: new FormControl('spiridonov.yuriy@unilver.com'),
-    password: new FormControl('guido')
+    email: new FormControl('alexandr.min@unilever.com'),
+    password: new FormControl('qwerty')
   });
 
   constructor(private authService: AuthService,
@@ -26,10 +26,12 @@ export class LoginViewComponent implements OnInit {
     event.preventDefault();
     this.authService.login(this.loginForm.value).subscribe(
         data => {
+          this.authService.requestStatus = 'success';
           this.router.navigate(['/dashboard']);
         },
         err => {
           console.log('error', err);
+          this.authService.requestStatus = 'error';
           this.notify['error']('Введены неверные данные', 'Ошибка при входе');
         }
     );
