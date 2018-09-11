@@ -8,7 +8,7 @@
     <div class="new-task-middle">
 
       <div style="margin-bottom: 2rem">
-        <label for="">Тип задачи</label>
+        <label>Тип задачи</label>
         <el-select [(model)]="taskType" placeholder="Выберите из списка задач">
           <el-option *ngFor="let item of [{value: 'FreeTask',label: 'Свободная задача' },
             { value: 'CheckPromoactivity', label: 'Проверка промоактивностей' }]"
@@ -20,7 +20,7 @@
       </div>
 
       <div class="d-inline-block w-50 pr-3">
-        <label for="task-desc">
+        <label>
           Дата начала
         </label>
         <mat-form-field>
@@ -30,7 +30,7 @@
         </mat-form-field>
       </div>
       <div class="d-inline-block w-50 pl-3 mt-2">
-        <label for="task-desc">
+        <label>
           Крайний срок
         </label>
         <mat-form-field>
@@ -41,7 +41,7 @@
       </div>
 
       <div style="margin-top: 3.5rem;margin-bottom: 2rem">
-        <label for="">Исполнитель</label>
+        <label>Исполнитель</label>
         <el-select [(model)]="value" placeholder="Выберите из списка сотрудников">
           <el-option *ngFor="let item of [{value: 'Курмашев Айдос',label: 'Курмашев Айдос' },
             { value: 'Калжан Бекжан', label: 'Калжан Бекжан' },
@@ -54,7 +54,7 @@
         </el-select>
       </div>
       <div style="margin-bottom: 3.5rem">
-        <label for="">Проверяющий</label>
+        <label>Проверяющий</label>
         <el-select [(model)]="value" placeholder="Выберите из списка сотрудников">
           <el-option *ngFor="let item of [{value: 'Курмашев Айдос',label: 'Курмашев Айдос' },
             { value: 'Калжан Бекжан', label: 'Калжан Бекжан' },

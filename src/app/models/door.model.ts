@@ -21,6 +21,9 @@ export class Door {
     }
 
     public setDoor(door: DoorInterface | Door): Door {
+        if (!door) {
+            return this;
+        }
         this.id = door.id;
         this.name = door.name;
         this.company = new Company(door.company);

@@ -14,6 +14,9 @@ export class Comment {
     }
 
     public setComment(comment: CommentInterface | Comment): Comment {
+        if (!comment) {
+            return this;
+        }
         this.pk = comment.pk;
         this.body = comment.body;
         this.img = comment.img;

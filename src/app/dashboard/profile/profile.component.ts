@@ -11,7 +11,7 @@ import {Subscription} from 'rxjs/index';
 export class ProfileComponent implements OnInit, OnDestroy {
 
   private profileSubscription: Subscription;
-  private profile: Employee;
+  profile: Employee;
 
   constructor(
       private profileService: ProfileService

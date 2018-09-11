@@ -12,6 +12,9 @@ export class Company {
     }
 
     public setCompany(company: CompanyInterface | Company): Company {
+        if (!company) {
+            return this;
+        }
         this.id = company.id;
         this.name = company.name;
         return this;

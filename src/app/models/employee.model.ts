@@ -54,6 +54,9 @@ export class Employee {
     }
 
     public setEmployee(employee: EmployeeInterface): Employee {
+        if (!employee) {
+            return this;
+        }
         this.id = employee.id;
         this.email = employee.email;
         this.firstName = employee.first_name;

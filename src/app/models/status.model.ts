@@ -11,6 +11,9 @@ export class Status {
     }
 
     public setStatus(status: StatusInterface): Status {
+        if (!status) {
+            return this;
+        }
         this.id = status.id;
         this.name = status.name;
         return this;

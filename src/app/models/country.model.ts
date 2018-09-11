@@ -12,6 +12,9 @@ export class Country {
     }
 
     public setCountry(country: CountryInterface | Country): Country {
+        if (!country) {
+            return this;
+        }
         this.id = country.id;
         this.name = country.name;
         return this;

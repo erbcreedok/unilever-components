@@ -9,7 +9,7 @@ import {TasksService} from '../../../../providers/tasks.service';
 })
 export class MyTasksTableComponent implements OnInit, OnDestroy {
 
-  private displayedColumns = [
+  displayedColumns = [
       'city',
       'door',
       'startDate',
@@ -39,7 +39,7 @@ export class MyTasksTableComponent implements OnInit, OnDestroy {
     this.subscriptions.forEach(s => s.unsubscribe());
   }
 
-  private isLoading(): boolean {
+  isLoading(): boolean {
       return this.tasksService.requestStatus === 'loading';
   }
 

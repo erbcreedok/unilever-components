@@ -33,8 +33,8 @@ export class TasksService {
     return this.httpClient.get(BASE_URL + '/api/tasks/promo-tasks/')
       .pipe(map(
         (data: {results: TaskInterface[]}): Task[] => {
-          console.log(data);
           const tasks: Task[] = [];
+          console.log(JSON.parse(JSON.stringify(data.results)));
           data.results.forEach((t: TaskInterface) => {
             tasks.push(new Task(t));
           });

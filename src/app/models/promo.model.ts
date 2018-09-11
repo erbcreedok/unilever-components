@@ -28,6 +28,9 @@ export class Promo {
     }
 
     public setPromo(promo: PromoInterface): Promo {
+        if (!promo) {
+            return this;
+        }
         this.id = promo.id;
         this.type = promo.type;
         this.producer = promo.producer;

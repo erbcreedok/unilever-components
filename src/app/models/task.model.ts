@@ -41,7 +41,7 @@ export class Task {
         this.doing = new Employee(task.doing);
         this.door = new Door(task.door);
         this.items = [];
-        task.items.forEach(i => this.items.push(new Item(i)))
+        (task.items || []).forEach(i => this.items.push(new Item(i)))
         return this;
     }
 

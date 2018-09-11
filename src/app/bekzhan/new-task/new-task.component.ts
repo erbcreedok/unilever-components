@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewTaskComponent implements OnInit {
 
+  taskType: string;
+  value: string;
+
   constructor() { }
 
   ngOnInit() {

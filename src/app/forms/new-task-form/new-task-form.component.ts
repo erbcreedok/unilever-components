@@ -14,6 +14,7 @@ export class NewTaskFormComponent implements OnInit {
     { value: 'CheckPromoactivity', label: 'Проверка промоактивностей' }
   ];
   taskType: string;
+  value: string;
 
   constructor() {
     this.taskType = this.taskTypes[0].value;

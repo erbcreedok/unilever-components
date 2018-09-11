@@ -15,6 +15,9 @@ export class Region {
     }
 
     public setRegion(region: RegionInterface | Region): Region {
+        if (!region) {
+            return this;
+        }
         this.id = region.id;
         this.name = region.name;
         this.country = new Country(region.country);

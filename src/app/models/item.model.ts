@@ -23,6 +23,9 @@ export class Item {
     }
 
     public setItem(item: ItemInterface): Item {
+        if (!item) {
+            return this;
+        }
         this.id = item.id;
         this.promo = new Promo(item.promo);
         this.product = new Product(item.product);

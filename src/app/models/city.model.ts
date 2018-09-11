@@ -16,6 +16,9 @@ export class City {
     }
 
     public setCity(city: CityInterface | City): City {
+        if (!city) {
+            return this;
+        }
         this.id = city.id;
         this.name = city.name;
         this.region = new Region(city.region);

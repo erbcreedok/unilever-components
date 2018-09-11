@@ -9,7 +9,7 @@
     </ul>
   </div>
   <div class="w-100 box-bordered" style="max-width: calc(100% - 225px);">
-    <div class="box p-5">
+    <div class="box p-5" style="min-height: 100%;">
       <div class="d-flex align-items-center justify-content-between mb-4">
         <h2>Все задачи</h2>
         <el-button>
@@ -18,7 +18,7 @@
         </el-button>
       </div>
       <div class="data-table-container mx--5" [el-loading]="isLoading()">
-        <ui-data-table class="data-table" [displayedColumns]="displayedColumns" [dataSource]="tasks">
+        <ui-data-table class="data-table" emptyMessage="Задач нет" [displayedColumns]="displayedColumns" [dataSource]="tasks" *ngIf="displayedColumns.length > 0">
         </ui-data-table>
       </div>
     </div>

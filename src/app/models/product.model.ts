@@ -18,6 +18,9 @@ export class Product {
     }
 
     public setProduct(product: ProductInterface): Product {
+        if (!product) {
+            return this;
+        }
         this.id = product.id;
         this.name = product.name;
         this.subcategory = product.subcategory;

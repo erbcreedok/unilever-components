@@ -3,19 +3,15 @@
 
     <div class="account-settings-top">
       <el-form-item label="Имя">
-        <el-input formControlName="fname" [model]="input" value="Айдос"></el-input>
+        <el-input formControlName="first_name" [model]="profile.firstName"></el-input>
       </el-form-item>
 
       <el-form-item label="Фамилия">
-        <el-input formControlName="lname" [model]="input" value="Курмашев"></el-input>
-      </el-form-item>
-
-      <el-form-item label="Адрес почты">
-        <el-input formControlName="mail" [model]="input" value="Курмашев"></el-input>
+        <el-input formControlName="last_name" [model]="profile.lastName"></el-input>
       </el-form-item>
 
       <el-form-item label="Номер телефона">
-        <el-input formControlName="phone" [model]="input" value="Курмашев"></el-input>
+        <el-input formControlName="phone" [model]="profile.phone"></el-input>
       </el-form-item>
     </div>
 
@@ -25,11 +21,11 @@
 
       <div class="mb-4">
         <label>Логин</label>
-        <p class="fs-14 mb-0" style="color: #000;">aidos.kurmashev</p>
+        <p class="fs-14 mb-0" style="color: #000;">{{profile.email}}</p>
       </div>
 
-      <el-form-item label="Номер телефона">
-        <el-input formControlName="password" native-type="password" value="Курмашев"></el-input>
+      <el-form-item label="Сменить пароль">
+        <el-input formControlName="password" [model]="password" native-type="password"></el-input>
       </el-form-item>
 
       <div class="d-inline-block pr-2 w-50">

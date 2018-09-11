@@ -10,6 +10,7 @@ export class UiDataTableComponent implements OnInit {
 
   @Input() displayedColumns: string[];
   @Input() dataSource: Task[];
+  @Input() emptyMessage = 'Таблица пуста';
 
   constructor() { }
 

@@ -12,4 +12,7 @@ export class BekzhanComponent implements OnInit {
   ngOnInit() {
   }
 
+  onOpenAbout() {
+    console.log('on open about');
+  }
 }
