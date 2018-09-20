@@ -13,6 +13,7 @@ const routes: Routes = [
     { path: 'gallery', loadChildren: './gallery/gallery.module#GalleryModule' },
     { path: 'bekzhan', loadChildren: '../bekzhan/bekzhan.module#BekzhanModule' },
     { path: 'yerbol', loadChildren: '../yerbol/yerbol.module#YerbolModule' },
+    { path: 'calendar', loadChildren: '../calendar/calendar.module#CalendarModule' },
     { path: 'no-route', component: PageNotFoundComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: '**', redirectTo: 'no-route' },
