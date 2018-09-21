@@ -7,9 +7,9 @@ import {
   ChangeDetectionStrategy,
   ViewChild,
   TemplateRef,
-  OnInit,
   AfterContentInit,
-  Renderer2
+  Renderer2,
+  OnInit,
 } from '@angular/core';
 import {
   startOfDay,
@@ -43,16 +43,13 @@ const colors: any = {
     secondary: '#02a785'
   }
 };
-type mockData = Array<{name: string, image: string}>;
-type numbers = Array<number>;
-
 @Component({
   selector: 'mwl-demo-component',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['calendar.component.scss'],
   templateUrl: 'calendar.component.html'
 })
-export class CalendarComponent implements OnInit, AfterContentInit{
+export class CalendarComponent implements AfterContentInit {
   @ViewChild('modalContent')
   modalContent: TemplateRef<any>;
 
@@ -94,7 +91,7 @@ export class CalendarComponent implements OnInit, AfterContentInit{
       end: addDays(new Date(), 1),
       title: '',
       color: colors.yellow,
-      actions: this.actions,
+      actions: [],
       allDay: true,
       resizable: {
         beforeStart: false,
@@ -114,18 +111,18 @@ export class CalendarComponent implements OnInit, AfterContentInit{
   locale: string = "ru";
 
   activeDayIsOpen: boolean = true;
-  numbers = ['../5.jpg', '../5.jpg', '../7.jpg', '../8.jpg', '../8.jpg'];
+  numbers = [
+    'https://lh3.googleusercontent.com/5kJhw-TsCe1VvExwEvbWapWd4GncVFelhryHFlei3wlNZsqw4GyIGekaSzIUaRGMW7S6WuwINQrwByczQrs0MJPiyWVYbMw=s688',
+   'http://minsvyaz.ru/preview/c/11199a2ec992acb3400926f4a846eeb8/256/x/256/uploaded/photos/konstantin-noskov.jpg', '../7.jpg', '../8.jpg', '../8.jpg'];
   left = '';
   limit = false;
   constructor(private modal: NgbModal, private renderer: Renderer2) {}
-  ngOnInit() {
-  };
 
   ngAfterContentInit () {
     setTimeout(()=>{
       this.collectionToArray(window.document.getElementsByClassName('cal-event')).forEach(calEventRef => {
         const div = this.renderer.createElement('div');
-        const avatars = ``;
+        let avatars = ``;
         this.numbers.forEach(numRef =>{
           if(this.numbers.indexOf(numRef)==2){
             this.left = this.numbers.indexOf(this.numbers[this.numbers.length-2]) + '+';

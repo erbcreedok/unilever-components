@@ -25,13 +25,13 @@
     </div>
   </ng-template>
   <!-- popup -->
-  <div class="popup-window d-none justify-content-between align-items-center flex-column">
+  <div class="popup-window d-flex justify-content-between align-items-center flex-column">
     <div class="popup-header">
       Задачи
     </div>
     <ul class="tasks-container">
-      <li class="task" *ngFor="let i of numbers">
-        <div class="task-info">Точка проверки: <span class="task-checkpoint">{{i}}</span></div>
+      <li class="task">
+        <div class="task-info">Точка проверки: <span class="task-checkpoint"></span></div>
         <div class="task-info">Исполнитель: <span class="task-performer">Аспандияров Шаншархан</span></div>
         <div class="task-info">Период проверки: <span class="task-check-period">15 Сен - 17 Сен, 2018</span></div>
         <div class="task-info">Тип задачи: <span class="task-type">Проверка промоактивностей</span></div>
