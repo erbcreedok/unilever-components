@@ -20,6 +20,7 @@ export class ProfileService {
   }
 
   private mutateProfile(profile: Employee) {
+    console.log('mutate new profile');
     this.profile = profile;
     this.profileChanged.next(this.getProfile());
   }
@@ -34,6 +35,21 @@ export class ProfileService {
       err => {
         this.requestStatus = 'error';
         console.log(err);
+      }
+    );
+  }
+
+  public changeProfileData(data: any) {
+    if (data.password === '') {
+      delete data.password;
+    }
+    this.httpClient.put(BASE_URL + '/api/users/profile/', data).toPromise()
+      .then((res: {first_name: string, last_name: string, phone: string}) => {
+        this.profile.firstName = res.first_name;
+        this.profile.lastName = res.last_name;
+        this.profile.phone = res.phone;
+        this.mutateProfile(this.profile);
+        console.log(res);
       }
     );
   }

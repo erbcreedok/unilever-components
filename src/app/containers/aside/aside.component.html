@@ -34,18 +34,19 @@
         <i class="fas fa-images"></i> <span>Фото отчеты</span>
       </li>
     </a>
-    <div class="border-line"></div>
-    <a [routerLink]="['bekzhan']" [routerLinkActive]="['active']">
-      <li class="left-offset">
-        <i class="far fa-angry"></i> <span>Бекжан модуль</span>
-      </li>
-    </a>
-    <a [routerLink]="['yerbol']" [routerLinkActive]="['active']">
-      <li class="left-offset">
-        <i class="fas fa-wheelchair"></i> <span>Ербол модуль</span>
-      </li>
-    </a>
-
+    <div *ngIf="isDevMode" #devPanel>
+      <div class="border-line"></div>
+      <a [routerLink]="['bekzhan']" [routerLinkActive]="['active']">
+        <li class="left-offset">
+          <i class="far fa-angry"></i> <span>Бекжан модуль</span>
+        </li>
+      </a>
+      <a [routerLink]="['yerbol']" [routerLinkActive]="['active']">
+        <li class="left-offset">
+          <i class="fas fa-wheelchair"></i> <span>Ербол модуль</span>
+        </li>
+      </a>
+    </div>
   </ul>
   <ul class="mt-auto mb-0 nav flex-column">
     <a routerLink="/logout" [routerLinkActive]="['active']">

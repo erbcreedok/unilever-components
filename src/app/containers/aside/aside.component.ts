@@ -7,11 +7,11 @@ import {AuthService} from '../../providers/auth/auth.service';
 })
 export class AsideComponent implements OnInit {
 
+  isDevMode = isDevMode();
+
   constructor() { }
 
-  ngOnInit() {
-    console.log(isDevMode());
-  }
+  ngOnInit() {}
 
 
 }

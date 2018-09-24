@@ -32,3 +32,7 @@ el-input ::ng-deep textarea {
 el-button ::ng-deep button {
   width: 50%;
 }
+
+.dirty-submit el-input.ng-invalid ::ng-deep input:not(:focus){
+  border-color: red;
+}

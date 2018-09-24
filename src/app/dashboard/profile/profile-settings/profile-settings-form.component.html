@@ -1,17 +1,25 @@
 <div class="account-settings">
-  <el-form label-width="0" label-position="top" >
+  <el-form label-width="0"
+           label-position="top"
+           (ngSubmit)="handleSubmit()"
+           [formGroup]="form"
+           *ngIf="profile"
+           [show-message]="true"
+           [show-icon]="true"
+           [ngClass]="{'dirty-submit': !cleanSubmit}"
+  >
 
     <div class="account-settings-top">
-      <el-form-item label="Имя">
-        <el-input formControlName="first_name" [model]="profile.firstName"></el-input>
+      <el-form-item label="Имя" [error]="messageCtrl('first_name')">
+        <el-input formControlName="first_name"></el-input>
       </el-form-item>
 
-      <el-form-item label="Фамилия">
-        <el-input formControlName="last_name" [model]="profile.lastName"></el-input>
+      <el-form-item label="Фамилия" [error]="messageCtrl('last_name')">
+        <el-input formControlName="last_name"></el-input>
       </el-form-item>
 
-      <el-form-item label="Номер телефона">
-        <el-input formControlName="phone" [model]="profile.phone"></el-input>
+      <el-form-item label="Номер телефона" [error]="messageCtrl('phone')">
+        <el-input formControlName="phone"></el-input>
       </el-form-item>
     </div>
 
@@ -24,8 +32,12 @@
         <p class="fs-14 mb-0" style="color: #000;">{{profile.email}}</p>
       </div>
 
-      <el-form-item label="Сменить пароль">
-        <el-input formControlName="password" [model]="password" native-type="password"></el-input>
+      <el-form-item label="Сменить пароль"  [error]="messageCtrl('password')">
+        <el-input formControlName="password" native-type="password"></el-input>
+      </el-form-item>
+
+      <el-form-item label="Подтвердите пароль"  [error]="messageCtrl('passwordC')" *ngIf="values.password">
+        <el-input formControlName="passwordC" native-type="password"></el-input>
       </el-form-item>
 
       <div class="d-inline-block pr-2 w-50">
