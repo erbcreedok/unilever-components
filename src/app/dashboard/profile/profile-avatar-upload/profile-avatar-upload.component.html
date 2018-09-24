@@ -1,0 +1,27 @@
+<div class="account-settings">
+  <el-upload class="d-block mb-5"
+             action=""
+             [drag]="true"
+             (error)="successHandle($event)"
+             [el-loading]="isLoading"
+  >
+    <ng-template #trigger>
+      <i class="el-icon-upload"></i>
+      <div class="el-upload__text">Перетащите изображение
+        <em>или кликните, что бы выбрать файл</em>
+      </div>
+    </ng-template>
+  </el-upload>
+  <div class="p-0">
+    <div class="d-inline-block pr-2 w-50">
+      <ui-button class="default d-block" (click)="handleCancel()">
+        Закрыть
+      </ui-button>
+    </div>
+    <div class="d-inline-block pl-2 w-50">
+      <ui-button class="primary d-block" [disabled]="isLoading || !file" (click)="handleSubmit()">
+        Загрузить
+      </ui-button>
+    </div>
+  </div>
+</div>

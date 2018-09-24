@@ -1,8 +1,16 @@
 import { Injectable } from '@angular/core';
 import {Employee, EmployeeInterface} from '../models/employee.model';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {BASE_URL} from '../shared/CONSTANTS';
 import {Subject} from 'rxjs/index';
+import {HttpParamsOptions} from '@angular/common/http/src/params';
+
+interface ProfileResponse {
+  first_name: string;
+  last_name: string;
+  phone: string;
+  avatar: string;
+}
 
 @Injectable()
 export class ProfileService {
@@ -13,14 +21,13 @@ export class ProfileService {
 
   public requestStatus = 'idle';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   public getProfile(): Employee {
     return this.profile ? new Employee(this.profile.getEmployeeInterface()) : null;
   }
 
   private mutateProfile(profile: Employee) {
-    console.log('mutate new profile');
     this.profile = profile;
     this.profileChanged.next(this.getProfile());
   }
@@ -40,17 +47,47 @@ export class ProfileService {
   }
 
   public changeProfileData(data: any) {
+    this.requestStatus = 'loading';
     if (data.password === '') {
       delete data.password;
     }
-    this.httpClient.put(BASE_URL + '/api/users/profile/', data).toPromise()
-      .then((res: {first_name: string, last_name: string, phone: string}) => {
+    return (this.httpClient.put(BASE_URL + '/api/users/profile/', data).toPromise() as Promise<ProfileResponse>)
+      .then((res: ProfileResponse) => {
         this.profile.firstName = res.first_name;
         this.profile.lastName = res.last_name;
         this.profile.phone = res.phone;
         this.mutateProfile(this.profile);
-        console.log(res);
-      }
-    );
+        this.requestStatus = 'success';
+        return this.getProfile();
+      })
+      .catch(err => {
+        console.log(err);
+        this.requestStatus = 'error';
+        throw new Error(err);
+      });
+  }
+
+  public changeProfileAvatar(file: any) {
+    this.requestStatus = 'loading';
+    const formData: FormData = new FormData();
+    formData.append('avatar', file, file.name);
+    return (this.httpClient.put(
+        BASE_URL + '/api/users/profile/',
+        formData
+    ).toPromise() as Promise<ProfileResponse>)
+      .then((res: ProfileResponse) => {
+        this.profile.firstName = res.first_name;
+        this.profile.lastName = res.last_name;
+        this.profile.phone = res.phone;
+        this.profile.avatar = res.avatar;
+        this.mutateProfile(this.profile);
+        this.requestStatus = 'success';
+        return this.getProfile();
+      })
+      .catch(err => {
+        console.log(err);
+        this.requestStatus = 'error';
+        throw new Error(err);
+      });
   }
 }

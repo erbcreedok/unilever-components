@@ -19,9 +19,7 @@ export interface EmployeeInterface {
     brands: any[];
     doors: any[];
     phone: string;
-    avatar: {
-        url: string
-    };
+    avatar: string;
 }
 
 export class Employee {
@@ -45,9 +43,7 @@ export class Employee {
     public brands: any[];
     public doors: any[];
     public phone: string;
-    public avatar: {
-        url: string
-    };
+    public avatar: string;
 
     constructor(employee: EmployeeInterface) {
         return employee ? this.setEmployee(employee) : null;

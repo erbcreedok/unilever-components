@@ -1,0 +1,37 @@
+.account-settings {
+  background: #fff;
+  padding: 30px;
+  label {
+    font-weight: 500;
+  }
+
+  .account-settings-top {
+    padding: 3rem 2rem 0;
+  }
+
+  .account-settings-bottom {
+    padding: 0 2rem 3rem;
+  }
+}
+
+hr {
+  margin: 2.5rem 0;
+  border-top: solid 2px #e6eaee;
+}
+
+el-form-item ::ng-deep .el-form-item__label {
+  padding: 0;
+  color: #7f8fa4;
+  font-weight: 500;
+  line-height: inherit;
+}
+el-input ::ng-deep textarea {
+  resize: none;
+}
+el-button ::ng-deep button {
+  width: 50%;
+}
+
+.dirty-submit el-input.ng-invalid ::ng-deep input:not(:focus){
+  border-color: red;
+}

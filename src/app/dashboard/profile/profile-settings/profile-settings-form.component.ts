@@ -17,6 +17,13 @@ export class ProfileSettingsFormComponent implements OnInit, OnDestroy {
 
   cleanSubmit = true;
   private profileSubscription: Subscription;
+  initValue = {
+    first_name: '',
+    last_name: '',
+    phone: '',
+    password: '',
+    passwordC: ''
+  };
   form = new FormGroup({
     first_name: new FormControl('', [Validators.required]),
     last_name: new FormControl('', [Validators.required]),
@@ -28,32 +35,45 @@ export class ProfileSettingsFormComponent implements OnInit, OnDestroy {
 
   constructor(private profileService: ProfileService) { }
 
+  get isLoading() {
+    return this.profileService.requestStatus === 'loading';
+  }
+
   ngOnInit() {
     if (this.profileService.requestStatus === 'idle') {
       this.profileService.fetchProfile();
     }
     this.profile = this.profileService.getProfile();
     if (this.profile) {
-      this.form.setValue({
+      this.initValue = {
         first_name: this.profile.firstName,
         last_name: this.profile.lastName,
         phone: this.profile.phone,
         password: '',
         passwordC: ''
-      });
+      };
+      this.form.setValue(this.initValue);
+      console.log('initValue', this.initValue);
+      console.log('form', this.form);
+      console.log('form.value', this.form.value);
     }
     this.profileSubscription = this.profileService.profileChanged.subscribe(
         (profile: Employee) => {
           this.profile = profile;
-          this.form.setValue({
+          this.initValue = {
             first_name: this.profile.firstName,
             last_name: this.profile.lastName,
             phone: this.profile.phone,
             password: '',
-            passwordC: '',
-          });
+            passwordC: ''
+          };
+          this.form.setValue(this.initValue);
         }
     );
+  }
+
+  get isInitValues(): boolean {
+    return (JSON.stringify(this.form.value) === JSON.stringify(this.initValue));
   }
 
   get controls(): {[p: string]: AbstractControl} {
@@ -74,16 +94,14 @@ export class ProfileSettingsFormComponent implements OnInit, OnDestroy {
   }
 
   handleSubmit() {
-    console.log('handling submit');
     this.cleanSubmit = false;
     // stop here if form is invalid
     if (this.form.invalid) {
-      console.log('validation invalid');
       return;
     }
-    console.log('validation success');
-    this.profileService.changeProfileData(this.form.value);
-    this.submit.emit();
+    this.profileService.changeProfileData(this.form.value).then(() => {
+      this.submit.emit();
+    });
   }
 
   messageCtrl(item: string): string {

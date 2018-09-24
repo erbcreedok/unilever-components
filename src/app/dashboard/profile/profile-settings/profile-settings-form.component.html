@@ -6,6 +6,7 @@
            *ngIf="profile"
            [show-message]="true"
            [show-icon]="true"
+           [el-loading]="isLoading"
            [ngClass]="{'dirty-submit': !cleanSubmit}"
   >
 
@@ -45,8 +46,8 @@
           Закрыть
         </ui-button>
       </div>
-      <div class="d-inline-block pl-2 w-50" (click)="handleSubmit()">
-        <ui-button class="primary d-block">
+      <div class="d-inline-block pl-2 w-50">
+        <ui-button class="primary d-block" [disabled]="isInitValues || !form.valid || isLoading"  (click)="handleSubmit()">
           Изменить
         </ui-button>
       </div>

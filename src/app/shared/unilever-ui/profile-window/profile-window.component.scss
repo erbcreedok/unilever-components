@@ -19,3 +19,14 @@ a {
     margin: 0;
   }
 }
+
+.avatar-upload {
+  padding: 0;
+  border: 1px transparent dashed;
+  border-radius: 50%;
+  transition: 200ms;
+  &:hover {
+    padding: 2px;
+    border-color: #4da8ec;
+  }
+}

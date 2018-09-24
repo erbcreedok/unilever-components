@@ -9,8 +9,9 @@ import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile.component';
 import { ProfileSettingsModalComponent } from './profile-settings/profile-settings-modal.component';
 import { ProfileSettingsFormComponent } from './profile-settings/profile-settings-form.component';
-import {ElModule} from 'element-angular/release/element-angular.module';
 import {ReactiveFormsModule} from '@angular/forms';
+import {ProfileAvatarUploadModalComponent} from './profile-avatar-upload/profile-avatar-upload-modal.component';
+import {ProfileAvatarUploadComponent} from './profile-avatar-upload/profile-avatar-upload.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,9 @@ import {ReactiveFormsModule} from '@angular/forms';
     ProfileComponent,
     ProfileSettingsFormComponent,
     ProfileSettingsModalComponent,
+    ProfileAvatarUploadComponent,
+    ProfileAvatarUploadModalComponent,
   ],
-  entryComponents: [ProfileSettingsFormComponent],
+  entryComponents: [ProfileSettingsFormComponent, ProfileAvatarUploadComponent],
 })
 export class ProfileModule { }

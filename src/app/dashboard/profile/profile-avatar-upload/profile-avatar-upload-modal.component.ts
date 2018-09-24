@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {Router} from '@angular/router';
-import {ProfileSettingsFormComponent} from './profile-settings-form.component';
+import {ProfileAvatarUploadComponent} from './profile-avatar-upload.component';
 
 @Component({
-  selector: 'app-profile-settings-modal',
+  selector: 'app-profile-avatar-upload-modal',
   template: ''
 })
-export class ProfileSettingsModalComponent implements OnInit {
+export class ProfileAvatarUploadModalComponent implements OnInit {
 
   constructor(private modal: MatDialog,
               private router: Router) { }
 
   ngOnInit() {
     setTimeout(() => {
-      const modalRef = this.modal.open(ProfileSettingsFormComponent);
+      const modalRef = this.modal.open(ProfileAvatarUploadComponent);
       modalRef.afterClosed().subscribe(() => {
         this.router.navigate(['/dashboard']);
       });

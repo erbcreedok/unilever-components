@@ -1,10 +1,27 @@
 <div *ngIf="profile" class="box p-5">
     <div class="d-flex">
-        <div style="min-width: 80px; margin-right: 20px">
+        <div style="min-width: 80px; margin-right: 20px" *ngIf="!canControl; else avatarControl">
             <div class="bg-image-container square circle"
                  [ngStyle]="{backgroundImage: 'url(' + (profile.avatar ? profile.avatar.url : '/assets/img/noavatar.jpg') + ')'}"
             ></div>
         </div>
+        <ng-template #avatarControl>
+            <div style="margin-right: 20px">
+                <el-tooltip placement="top">
+                    <div style="min-width: 80px;">
+                        <a [routerLink]="['avatar-upload']" class="avatar-upload d-block">
+                            <div class="bg-image-container square circle"
+                                 [ngStyle]="{backgroundImage: 'url(' + (profile.avatar ? profile.avatar : '/assets/img/noavatar.jpg') + ')'}"
+                            ></div>
+                        </a>
+                    </div>
+                    <ng-template #tip>
+                        <span *ngIf="!profile.avatar">Загрузить изображение</span>
+                        <span *ngIf="profile.avatar">Сменить изображение</span>
+                    </ng-template>
+                </el-tooltip>
+            </div>
+        </ng-template>
         <div style="min-width: 220px">
             <div class="mb-3">
                 <h2 class="mb-0">{{profile.firstName}}  {{profile.lastName}}</h2>

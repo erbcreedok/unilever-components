@@ -22,7 +22,6 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.profile = this.profileService.getProfile();
     this.profileSubscription = this.profileService.profileChanged.subscribe(
         (profile: Employee) => {
-          console.log('get new profile');
           this.profile = profile;
         }
     );

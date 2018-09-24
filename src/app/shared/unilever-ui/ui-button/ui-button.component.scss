@@ -11,7 +11,10 @@
   color: $blue-gray-2;
   cursor: pointer;
   transition: .2s;
-  &:hover {
+  &[disabled] {
+    cursor: not-allowed;
+  }
+  &:not([disabled]):hover {
     opacity: .75;
   }
   :host.default & {

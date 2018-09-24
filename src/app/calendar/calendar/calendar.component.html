@@ -1,0 +1,178 @@
+<link href="https://unpkg.com/bootstrap-css-only@4.1.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.css" rel="stylesheet">
+<link href="https://unpkg.com/angular-calendar@0.26.0/css/angular-calendar.css" rel="stylesheet">
+<link href="https://unpkg.com/flatpickr@4.5.2/dist/flatpickr.css" rel="stylesheet">
+<div class="box-limit">
+  <ng-template #modalContent let-close="close">
+    <div class="modal-header">
+      <h5 class="modal-title">Event action occurred</h5>
+      <button type="button" class="close" (click)="close()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div>
+        Action:
+        <pre>{{ modalData?.action }}</pre>
+      </div>
+      <div>
+        Event:
+        <pre>{{ modalData?.event | json }}</pre>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" (click)="close()">OK</button>
+    </div>
+  </ng-template>
+  <!-- popup -->
+  <div class="popup-window d-flex justify-content-between align-items-center flex-column">
+    <div class="popup-header">
+      Задачи
+    </div>
+    <ul class="tasks-container">
+      <li class="task">
+        <div class="task-info">Точка проверки: <span class="task-checkpoint"></span></div>
+        <div class="task-info">Исполнитель: <span class="task-performer">Аспандияров Шаншархан</span></div>
+        <div class="task-info">Период проверки: <span class="task-check-period">15 Сен - 17 Сен, 2018</span></div>
+        <div class="task-info">Тип задачи: <span class="task-type">Проверка промоактивностей</span></div>
+      </li>
+      <li class="task">
+        <div class="task-info">Точка проверки: <span class="task-checkpoint">Магнум, Магнум 1</span></div>
+        <div class="task-info">Исполнитель: <span class="task-performer">Аспандияров Шаншархан</span></div>
+        <div class="task-info">Период проверки: <span class="task-check-period">15 Сен - 17 Сен, 2018</span></div>
+        <div class="task-info">Тип задачи: <span class="task-type">Проверка промоактивностей</span></div>
+      </li>
+      <li class="task">
+        <div class="task-info">Точка проверки: <span class="task-checkpoint">Магнум, Магнум 1</span></div>
+        <div class="task-info">Исполнитель: <span class="task-performer">Аспандияров Шаншархан</span></div>
+        <div class="task-info">Период проверки: <span class="task-check-period">15 Сен - 17 Сен, 2018</span></div>
+        <div class="task-info">Тип задачи: <span class="task-type">Проверка промоактивностей</span></div>
+      </li>
+    </ul>
+    <button type="button" class="popup-button-close" name="button">Закрыть</button>
+  </div>
+  <div class="row text-center">
+    <div class="col-md-6 d-flex justify-content-between align-items-center">
+      <div class="bold-text"><span class="small-text">Город</span> Астана</div>
+      <div class="bold-text"><span class="small-text">Сеть</span> Магнум</div>
+      <div class="bold-text"><span class="small-text">Исполнитель</span> Все</div>
+      <div class="bold-text"><span class="small-text">Период</span> {{ viewDate | calendarDate:(view + 'ViewTitle'):'ru' }}</div>
+    </div>
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-4 d-flex justify-content-between align-items-center">
+      <div class="bold-text"><span class="small-text">Сегодня</span> {{viewDate | amLocale:'ru' | amDateFormat:'DD MMMM, YYYY'}}</div>
+      <button class="filter-button d-flex justify-content-between align-items-center"><div class="filter-bar-icon"></div> Фильтр <i class="fas fa-angle-down"></i></button>
+    </div>
+        <div
+          class="btn btn-primary d-none"
+          (click)="view = CalendarView.Week"
+          [class.active]="view === CalendarView.Week">
+          Week
+        </div>
+  </div>
+  <br>
+  <div [ngSwitch]="view">
+
+    <mwl-calendar-week-view
+      *ngSwitchCase="CalendarView.Week"
+      [viewDate]="viewDate"
+      [events]="events"
+      [locale] = 'locale'
+      [hourSegments]=1
+      [hourSegmentHeight]=45
+      [refresh]="refresh"
+      (eventClicked)="handleEvent('Clicked', $event.event)"
+      (eventTimesChanged)="eventTimesChanged($event)">
+    </mwl-calendar-week-view>
+
+  </div>
+
+  <br><br><br>
+
+  <!-- <h3>
+    Edit events
+    <button
+      class="btn btn-primary pull-right"
+      (click)="addEvent()">
+      Add new
+    </button>
+    <div class="clearfix"></div>
+  </h3> -->
+
+  <!-- <table class="table table-bordered">
+
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Primary color</th>
+        <th>Secondary color</th>
+        <th>Starts at</th>
+        <th>Ends at</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let event of events; let index = index">
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="event.title"
+            (keyup)="refresh.next()">
+        </td>
+        <td>
+          <input
+            type="color"
+            [(ngModel)]="event.color.primary"
+            (change)="refresh.next()">
+        </td>
+        <td>
+          <input
+            type="color"
+            [(ngModel)]="event.color.secondary"
+            (change)="refresh.next()">
+        </td>
+        <td>
+          <input
+            class="form-control"
+            type="text"
+            mwlFlatpickr
+            [(ngModel)]="event.start"
+            (ngModelChange)="refresh.next()"
+            [altInput]="true"
+            [convertModelValue]="true"
+            [enableTime]="true"
+            dateFormat="Y-m-dTH:i"
+            altFormat="F j, Y H:i"
+            placeholder="Not set">
+        </td>
+        <td>
+          <input
+            class="form-control"
+            type="text"
+            mwlFlatpickr
+            [(ngModel)]="event.end"
+            (ngModelChange)="refresh.next()"
+            [altInput]="true"
+            [convertModelValue]="true"
+            [enableTime]="true"
+            dateFormat="Y-m-dTH:i"
+            altFormat="F j, Y H:i"
+            placeholder="Not set">
+        </td>
+        <td>
+          <button
+            class="btn btn-danger"
+            (click)="events.splice(index, 1); refresh.next()">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table> -->
+
+</div>
