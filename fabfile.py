@@ -23,7 +23,7 @@ def git_pull():
 
 def generate_dist():
     run('cd %s; npm install' % env.app_path)
-    run('cd %s; ng build --prod --aot' % env.app_path)
+    run('cd %s; npm run build' % env.app_path)
 
 
 def deploy():
