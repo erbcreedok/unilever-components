@@ -1,10 +1,10 @@
 export interface StatusInterface {
-    id: number;
-    name: string;
+    value: number;
+    display: string;
 }
 export class Status {
-    public id: number;
-    public name: string;
+    public value: number;
+    public display: string;
 
     constructor(status: StatusInterface) {
         this.setStatus(status);
@@ -14,15 +14,15 @@ export class Status {
         if (!status) {
             return this;
         }
-        this.id = status.id;
-        this.name = status.name;
+        this.value = status.value;
+        this.display = status.display;
         return this;
     }
 
     public getStatusInterface(): StatusInterface {
         return {
-            id: this.id,
-            name: this.name
+            value: this.value,
+            display: this.display
         };
     }
 }
