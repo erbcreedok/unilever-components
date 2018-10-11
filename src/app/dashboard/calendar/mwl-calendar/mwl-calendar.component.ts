@@ -72,7 +72,6 @@ export class MwlCalendarComponent implements OnInit, OnChanges, OnDestroy {
 
   eventImages(event: CalendarEvent): {url: string, title: string}[] {
     const index = this.events.findIndex(e => e === event);
-    console.log(index, this.eventTasks);
     return this.eventTasks[index].tasks.map(eventTask => {
       const isEmployeeExists = eventTask.checking && eventTask.checking.firstName && eventTask.checking.lastName;
       const isAvatarExist = eventTask.checking && eventTask.checking.avatar && eventTask.checking.avatar !== '';
@@ -93,7 +92,9 @@ export class MwlCalendarComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.modalRef.close();
+    if (this.modalRef) {
+      this.modalRef.close();
+    }
   }
 
   ngOnChanges() {
