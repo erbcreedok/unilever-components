@@ -9,13 +9,12 @@ import {Task} from '../../../models/task.model';
 export class UiDataTableComponent implements OnInit {
 
   @Input() displayedColumns: string[];
-  @Input() dataSource: Task[];
+  @Input() dataSource: any[];
   @Input() emptyMessage = 'Таблица пуста';
+  @Input() taskType = '';
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.dataSource);
   }
-
 }

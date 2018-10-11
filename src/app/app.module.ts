@@ -1,4 +1,6 @@
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
+import {registerLocaleData} from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +12,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './providers/auth/auth.interceptor';
 import {AuthGuard} from './providers/auth/auth.guard';
 import {NoAuthGuard} from './providers/auth/no-auth.guard';
+
+registerLocaleData(localeRu);
 
 @NgModule({
   declarations: [
@@ -25,6 +29,7 @@ import {NoAuthGuard} from './providers/auth/no-auth.guard';
     AuthService,
     AuthGuard,
     NoAuthGuard,
+    { provide: LOCALE_ID, useValue: 'ru' },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

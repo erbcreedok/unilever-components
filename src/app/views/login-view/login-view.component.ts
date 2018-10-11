@@ -13,7 +13,7 @@ export class LoginViewComponent implements OnInit {
 
   loginForm = new FormGroup({
     email: new FormControl('alexandr.min@unilever.com'),
-    password: new FormControl('qwerty')
+    password: new FormControl('12345')
   });
 
   constructor(private authService: AuthService,

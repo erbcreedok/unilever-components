@@ -1,24 +1,24 @@
-<div *ngIf="status === 'active'; else vacation" #active class="color-active">
+<div *ngIf="status === 0; else vacation" #active class="color-active">
   <i class="ui-icon icon-office-worker"></i>
   <span>Активен</span>
 </div>
 
 <ng-template  #vacation>
-  <div *ngIf="status === 'vacation'; else ill" class="color-info">
+  <div *ngIf="status === 1; else ill" class="color-info">
     <i class="ui-icon icon-sun-umbrella"></i>
     <span>В отпуске</span>
   </div>
 </ng-template>
 
 <ng-template #ill>
-  <div *ngIf="status === 'ill'; else none" class="color-danger">
+  <div *ngIf="status === 2; else none" class="color-danger">
     <i class="ui-icon icon-pills"></i>
     <span>Заболел</span>
   </div>
 </ng-template>
 
 <ng-template #none>
-  <div *ngIf="!status || status === ''" class="color-gray">
+  <div *ngIf="!status || status > 2" class="color-gray">
     <span>Статус не указан</span>
   </div>
 </ng-template>

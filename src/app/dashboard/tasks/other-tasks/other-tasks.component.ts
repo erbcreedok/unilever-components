@@ -11,9 +11,9 @@ export class OtherTasksComponent implements OnInit, OnDestroy {
 
   tabs: {label: string, path: string}[] = [
     {label: 'Промоактивности',  path: 'promoactivities'},
-    {label: 'Проверка долей',   path: 'parts-check'},
-    {label: 'Сбор цен',         path: 'price-collection'},
-    {label: 'Дополнительные',   path: 'additional'}
+    {label: 'Проверка долей',   path: 'self-share'},
+    {label: 'Сбор цен',         path: 'price-tracking'},
+    {label: 'Дополнительные',   path: 'complementary'},
   ];
   selectedPath = '';
   subscriptions: Subscription[] = [];

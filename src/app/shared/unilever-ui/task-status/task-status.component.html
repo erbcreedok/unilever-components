@@ -1,21 +1,33 @@
-<div *ngIf="status === 0; else inProcess" #ready class="bg-warning">
-  <span>НА ПРОВЕРКУ</span>
+<div *ngIf="status === 0; else inProcess" #ready class="bg-red">
+  <span title="В процессе">В ПРОЦЕССЕ</span>
 </div>
 
 <ng-template #inProcess>
-  <div *ngIf="status === 1; else done" class="bg-red">
-    <span>В ПРОЦЕССЕ</span>
+  <div *ngIf="status === 1; else done" class="bg-warning">
+    <span title="На перепроверку">НА ПЕРЕПРОВЕРКУ</span>
   </div>
 </ng-template>
 
 <ng-template  #done>
-  <div *ngIf="status === 2; else none"class="bg-success">
-    <span>ВЫПОЛНЕНО</span>
+  <div *ngIf="status === 2; else doneLate"class="bg-success">
+    <span title="Выполнено">ВЫПОЛНЕНО</span>
+  </div>
+</ng-template>
+
+<ng-template  #doneLate>
+  <div *ngIf="status === 3; else notDone"class="bg-success">
+    <span title="Выполнено с опозданием">ВЫПОЛНЕНО С ОПОЗДАНИЕМ</span>
+  </div>
+</ng-template>
+
+<ng-template  #notDone>
+  <div *ngIf="status === 4; else none" class="bg-red">
+    <span title="Не выполнено">НЕ ВЫПОЛНЕНО</span>
   </div>
 </ng-template>
 
 <ng-template #none>
   <div class="bg-gray">
-    <span>НЕ УКАЗАН</span>
+    <span title="Не указано">НЕ УКАЗАН</span>
   </div>
 </ng-template>

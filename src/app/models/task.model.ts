@@ -2,6 +2,7 @@ import {Door, DoorInterface} from './door.model';
 import {Status, StatusInterface} from './status.model';
 import {Employee, EmployeeInterface} from './employee.model';
 import {Item, ItemInterface} from './item.model';
+import {TYPES} from '../dashboard/tasks/task-types.constants';
 
 export interface TaskInterface {
     id: number;
@@ -13,6 +14,7 @@ export interface TaskInterface {
     checking: EmployeeInterface;
     doing: EmployeeInterface;
     items: ItemInterface[];
+    task_type: string;
 }
 
 export class Task {
@@ -26,6 +28,12 @@ export class Task {
     public checking: Employee;
     public doing: Employee;
     public items: Item[];
+    public taskType: string;
+
+    get taskTypePath(): string {
+        const type = TYPES.find(t => t.label === this.taskType);
+        return type ? type.path : '';
+    }
 
     constructor(task: TaskInterface) {
         this.setTask(task);
@@ -41,7 +49,8 @@ export class Task {
         this.doing = new Employee(task.doing);
         this.door = new Door(task.door);
         this.items = [];
-        (task.items || []).forEach(i => this.items.push(new Item(i)))
+        (task.items || []).forEach(i => this.items.push(new Item(i)));
+        this.taskType = task.task_type;
         return this;
     }
 
@@ -57,6 +66,7 @@ export class Task {
             doing: this.doing.getEmployeeInterface(),
             door: this.door.getDoorInterface(),
             items: items,
+            task_type: this.taskType
         };
     }
 

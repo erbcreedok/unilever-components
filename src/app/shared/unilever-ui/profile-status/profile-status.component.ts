@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ProfileStatusComponent implements OnInit {
 
-  @Input() status: string;
+  @Input() status: number;
 
   constructor() {
   }

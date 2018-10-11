@@ -4,7 +4,15 @@
   font-size: .9rem;
   font-weight: 500;
   & > div {
+    white-space: nowrap;
     padding: 3px 7px 2px;
     border-radius: 3px;
+    &>span {
+      display: inline-block;
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
   }
 }

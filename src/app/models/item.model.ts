@@ -7,7 +7,24 @@ export interface ItemInterface {
     product: ProductInterface;
     completed: number;
     type: number;
+    discount: number;
     comments: CommentInterface[];
+    shelfshare: {
+        id: number,
+        category: {
+            pk: number,
+            name: string,
+            brands: {
+                pk: number,
+                name: string
+            }[]
+        },
+        discount: number,
+        client: {
+            id: number,
+            name: string
+        }
+    };
 }
 
 export class Item {
@@ -16,6 +33,23 @@ export class Item {
     public product: Product;
     public completed: number;
     public type: number;
+    public shelfShare: {
+        id: number,
+        category: {
+            pk: number,
+            name: string,
+            brands: {
+                  pk: number,
+                  name: string
+            }[]
+        },
+        discount: number,
+        client: {
+            id: number,
+            name: string
+        }
+    };
+    public discount: number;
     public comments: Comment[];
 
     constructor (item: ItemInterface) {
@@ -32,7 +66,11 @@ export class Item {
         this.completed = item.completed;
         this.type = item.type;
         this.comments = [];
-        item.comments.forEach(c => this.comments.push(new Comment(c)));
+        if (item.comments) {
+            item.comments.forEach(c => this.comments.push(new Comment(c)));
+        }
+        this.discount = item.discount;
+        this.shelfShare = item.shelfshare;
         return this;
     }
 
@@ -40,11 +78,13 @@ export class Item {
         const comments: CommentInterface[] = this.comments.map(c => c.getCommentInterface());
         return {
             id: this.id,
-            promo: this.promo.getPromoInterface(),
-            product: this.product.getProductInterface(),
+            promo: this.promo ? this.promo.getPromoInterface() : null,
+            product: this.product ? this.product.getProductInterface() : null,
             completed: this.completed,
             type: this.type,
             comments: comments,
+            discount: this.discount,
+            shelfshare: this.shelfShare
         };
     }
 }

@@ -2,6 +2,7 @@
   <el-upload class="d-block mb-5"
              action=""
              [drag]="true"
+             [upload-filter]="imageFilter.bind(this)"
              (error)="successHandle($event)"
              [el-loading]="isLoading"
   >

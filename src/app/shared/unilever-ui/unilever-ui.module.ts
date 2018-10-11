@@ -20,6 +20,9 @@ import { UiGalleryItemComponent } from './ui-gallery-item/ui-gallery-item.compon
 import { UiDatepickerComponent } from './ui-datepicker/ui-datepicker.component';
 import { UiDataTableComponent } from './ui-data-table/ui-data-table.component';
 import { UiTwoWayTableComponent } from './ui-two-way-table/ui-two-way-table.component';
+import { UiTasksDataTableComponent } from './ui-data-table/ui-tasks-data-table/ui-tasks-data-table.component';
+import { UiItemsDataTableComponent } from './ui-data-table/ui-items-data-table/ui-items-data-table.component';
+import { UiFilterContainerComponent } from './ui-filter-container/ui-filter-container.component';
 
 @NgModule({
   imports: [
@@ -45,9 +48,13 @@ import { UiTwoWayTableComponent } from './ui-two-way-table/ui-two-way-table.comp
     UiDatepickerComponent,
     UiDataTableComponent,
     UiTwoWayTableComponent,
+    UiTasksDataTableComponent,
+    UiItemsDataTableComponent,
+    UiFilterContainerComponent,
   ],
   exports: [
     ElModule,
+    MaterialModule,
     ProfileWindowComponent,
     ProfileStatusComponent,
     UiButtonComponent,
@@ -62,7 +69,9 @@ import { UiTwoWayTableComponent } from './ui-two-way-table/ui-two-way-table.comp
     UiGalleryItemComponent,
     UiDatepickerComponent,
     UiDataTableComponent,
-    MaterialModule,
+    UiTasksDataTableComponent,
+    UiItemsDataTableComponent,
+    UiFilterContainerComponent,
   ]
 })
 export class UnileverUiModule { }

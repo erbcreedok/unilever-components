@@ -11,17 +11,6 @@ export class ProfileWindowComponent implements OnInit {
   @Input() canControl = false;
   @Input() profile: Employee;
 
-  data: any[] = [
-    {
-      value: 'hello',
-      label: 'hello'
-    },
-    {
-      value: 'world!',
-      label: 'world!'
-    },
-  ];
-
   constructor() { }
 
   ngOnInit() {

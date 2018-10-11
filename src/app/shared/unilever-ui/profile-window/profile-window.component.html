@@ -30,25 +30,25 @@
             <ui-profile-status [status]="'vacation'" style="font-size: 1.6rem" class="cursor-pointer" *ngIf="!canControl"></ui-profile-status>
             <div ngbDropdown class="d-block mb-3" *ngIf="canControl">
                 <div ngbDropdownToggle>
-                    <ui-profile-status [status]="'vacation'" style="font-size: 1.6rem" class="cursor-pointer underline-hover"></ui-profile-status>
+                    <ui-profile-status [status]="profile.status.value" style="font-size: 1.6rem" class="cursor-pointer underline-hover"></ui-profile-status>
                 </div>
                 <div ngbDropdownMenu >
                     <button class="dropdown-item cursor-pointer">
-                        <ui-profile-status [status]="'active'"></ui-profile-status>
+                        <ui-profile-status [status]="0"></ui-profile-status>
                     </button>
                     <button class="dropdown-item cursor-pointer">
-                        <ui-profile-status [status]="'vacation'"></ui-profile-status>
+                        <ui-profile-status [status]="1"></ui-profile-status>
                     </button>
                     <button class="dropdown-item cursor-pointer">
-                        <ui-profile-status [status]="'ill'"></ui-profile-status>
+                        <ui-profile-status [status]="2"></ui-profile-status>
                     </button>
                 </div>
             </div>
             <p class="mb-1" style="font-size: 1.2rem">
-                <a href="mailto: {{profile.email}}">{{profile.email}}</a>
+                <a target="_blank" href="mailto: {{profile.email}}">{{profile.email}}</a>
             </p>
             <p class="mb-1" style="font-size: 1.2rem">
-                <a href="tel: {{profile.phone}}">{{profile.phone}}</a>
+                <a target="_blank" href="tel: {{profile.phone}}">{{profile.phone}}</a>
             </p>
         </div>
         <div class="mx-3 w-100">
@@ -66,15 +66,15 @@
                 </ui-icon-circle>
                 <ui-icon-circle [icon]="'ui-icon icon-clipboards-4'" class="danger mb-4">
                     <h5 class="title">В процессе</h5>
-                    <p class="number">{{profile.tasksInfo.inProgress}}</p>
+                    <p class="number">{{profile.tasksInfo.inProcess}}</p>
                 </ui-icon-circle>
                 <ui-icon-circle [icon]="'ui-icon icon-clipboards-3'" class="warning mb-4">
                     <h5 class="title">Исправить</h5>
-                    <p class="number">{{profile.tasksInfo.fix}}</p>
+                    <p class="number">{{profile.tasksInfo.notDone}}</p>
                 </ui-icon-circle>
                 <ui-icon-circle [icon]="'ui-icon icon-clipboards-2'" class="success mb-4">
                     <h5 class="title">Выполнено</h5>
-                    <p class="number">{{profile.tasksInfo.completed}}</p>
+                    <p class="number">{{profile.tasksInfo.done}}</p>
                 </ui-icon-circle>
             </div>
         </div>

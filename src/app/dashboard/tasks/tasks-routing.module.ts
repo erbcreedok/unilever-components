@@ -6,19 +6,21 @@ import {OtherTasksComponent} from './other-tasks/other-tasks.component';
 import {TasksComponent as TaskContainerComponent} from '../../containers/tasks/tasks.component';
 import {MyTasksTableComponent} from './my-tasks/my-tasks-table/my-tasks-table.component';
 import {TaskComponent} from './task/task.component';
+import {STATUSES, TYPES} from './task-types.constants';
 
 const routes: Routes = [
-  {path: 'id/:id', pathMatch: 'prefix', component: TaskComponent},
+  {path: 'id/:type/:id', component: TaskComponent},
   { path: '', component: TasksComponent, children: [
-    {path: 'my', pathMatch: 'prefix', component: MyTasksComponent, children: [
-      {path: '', pathMatch: 'prefix', redirectTo: 'in-process'},
-      {path: ':status', pathMatch: 'prefix', component: MyTasksTableComponent},
+    {path: 'my', component: MyTasksComponent, children: [
+      {path: ':status/:type', component: MyTasksTableComponent},
+      {path: ':status', redirectTo: ':status/' + TYPES[0].path},
+      {path: '', redirectTo: STATUSES[0].path + '/' + TYPES[0].path},
     ]},
-    {path: 'other', pathMatch: 'prefix', component: OtherTasksComponent, children: [
-      {path: '', pathMatch: 'prefix', redirectTo: 'promoactivities'},
-      {path: ':status', pathMatch: 'prefix', component: TaskContainerComponent},
+    {path: 'other', component: OtherTasksComponent, children: [
+      {path: ':type', component: TaskContainerComponent},
+      {path: '', redirectTo: TYPES[0].path},
     ]},
-    {path: '', pathMatch: 'prefix', redirectTo: 'my/in-process'},
+    {path: '', redirectTo: 'my/' + STATUSES[0].path},
   ]},
 ];
 

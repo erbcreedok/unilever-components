@@ -1,0 +1,10 @@
+<el-button (click) = "isVisible = true">
+  <i class="fas fa-filter"></i>
+  Фильтр
+</el-button>
+<div class="filter-box" *ngIf="isVisible">
+  <div class="filter-box-backdrop" (click)="isVisible = false"></div>
+  <div class="filter-box-content">
+    <ng-content></ng-content>
+  </div>
+</div>

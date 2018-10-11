@@ -13,6 +13,7 @@ import {TasksComponent} from './tasks/tasks.component';
 import {EmployeeCheckPartsViewComponent} from './employee-check-parts-view/employee-check-parts-view.component';
 import {EmployeePromoactivitiesViewComponent} from './employee-promoactivities-view/employee-promoactivities-view.component';
 import {EmployeeTasksViewComponent} from './employee-tasks-view/employee-tasks-view.component';
+import { AbsFilterComponent } from './abs-filter/abs-filter.component';
 
 @NgModule({
   imports: [
@@ -32,6 +33,7 @@ import {EmployeeTasksViewComponent} from './employee-tasks-view/employee-tasks-v
       EmployeeCheckPartsViewComponent,
       EmployeePromoactivitiesViewComponent,
       EmployeeTasksViewComponent,
+      AbsFilterComponent,
   ],
   exports: [
       AsideComponent,

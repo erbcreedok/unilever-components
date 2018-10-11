@@ -49,4 +49,17 @@ export class ProfileAvatarUploadComponent implements OnInit {
     this.file = file.commonFile.raw;
     this.handleSubmit();
   }
+
+  imageFilter(file: File): boolean {
+    console.log(file);
+    if (file.size > 1048576) {
+      this.notify.error('Максимально допустимый размер файла 1MB', 'Ошибка при загрузке');
+      return false;
+    }
+    if (file.type.indexOf('image') === -1) {
+      this.notify.error('Данный файл не является изображением', 'Ошибка при загрузке');
+      return false;
+    }
+    return true;
+  }
 }

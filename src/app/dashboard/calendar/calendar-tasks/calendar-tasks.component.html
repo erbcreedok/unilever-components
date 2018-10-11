@@ -1,0 +1,44 @@
+<h3 class="text-center mb-4 fs-18">
+  Задачи
+</h3>
+<ul class="tasks-container py-2">
+  <li class="task fs-12 mb-4 font-weight-300"
+      *ngFor="let task of tasks"
+      [routerLink]="['/dashboard', 'tasks', 'id', task.taskTypePath, task.id]"
+      style="cursor: pointer"
+  >
+    <div class="task-info">
+      <span class="color-light-label">
+        Точка проверки:
+      </span>
+      <span class="color-blue-1 font-weight-500">
+        {{ task.door.name }}
+      </span>
+    </div>
+    <div class="task-info">
+      <span class="color-light-label">
+        Исполнитель:
+      </span>
+      <a href="#" class="color-blue-light">
+        {{ task.checking.firstName }} {{ task.checking.lastName }}
+      </a>
+    </div>
+    <div class="task-info">
+      <span class="color-light-label">
+        Период проверки:
+      </span>
+      <span class="color-blue-2">
+        {{ task.startDate | date:'d MMM y' }} - {{ task.endDate | date:'d MMM y' }}
+      </span>
+    </div>
+    <div class="task-info">
+      <span class="color-light-label">
+        Тип задачи:
+      </span>
+      <span class="color-blue-2">
+        {{ task.taskType }}
+      </span>
+
+    </div>
+  </li>
+</ul>

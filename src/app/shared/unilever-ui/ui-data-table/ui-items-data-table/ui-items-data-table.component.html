@@ -1,0 +1,62 @@
+<table class="ui-datatable" mat-table [dataSource]="dataSource" *ngIf="dataSource && dataSource.length > 0; else emptyTable">
+  <ng-container matColumnDef="category">
+    <th mat-header-cell *matHeaderCellDef> Категория </th>
+    <td mat-cell *matCellDef="let item"> {{item.product.subcategory.category ? item.product.subcategory.category.name : ''}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="brand">
+    <th mat-header-cell *matHeaderCellDef> Брэнд </th>
+    <td mat-cell *matCellDef="let item"> {{item.product.brand ? item.product.brand.name : ''}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef> Тип </th>
+    <td mat-cell *matCellDef="let item"> {{item.discount ? 'Скидка' : 'Нет'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> Статус </th>
+    <td mat-cell *matCellDef="let item"> Нет </td>
+  </ng-container>
+
+  <ng-container matColumnDef="photo">
+    <th mat-header-cell *matHeaderCellDef> Фото </th>
+    <td mat-cell *matCellDef="let item"> <a routerLink="/dashboard/gallery">Посмотреть</a> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="comments">
+    <th mat-header-cell *matHeaderCellDef> Комментарии </th>
+    <td mat-cell *matCellDef="let item"> <a routerLink="/dashboard/gallery">Прочитать</a> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="category_shelf">
+    <th mat-header-cell *matHeaderCellDef> Категория </th>
+    <td mat-cell *matCellDef="let item"> {{item.shelfShare.category ? item.shelfShare.category.name : ''}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="contract_shelf">
+    <th mat-header-cell *matHeaderCellDef> Доля по контракту</th>
+    <td mat-cell *matCellDef="let item"> {{generateRandom(5,15)}}% </td>
+  </ng-container>
+
+  <ng-container matColumnDef="true_shelf">
+    <th mat-header-cell *matHeaderCellDef> Доля по факту </th>
+    <td mat-cell *matCellDef="let item"> {{generateRandom(5,15)}}% </td>
+  </ng-container>
+
+  <ng-container matColumnDef="error_shelf">
+    <th mat-header-cell *matHeaderCellDef> Погрешность </th>
+    <td mat-cell *matCellDef="let item"> {{generateRandom(-5,5)}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns;"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<ng-template #emptyTable>
+  <div class="table-is-empty">
+    <h2 class="text-center py-3" style="opacity: .3">
+      {{emptyMessage}}
+    </h2>
+  </div>
+</ng-template>

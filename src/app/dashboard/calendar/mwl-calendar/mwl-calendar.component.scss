@@ -1,0 +1,80 @@
+.box-limit {
+  margin-left: -31px;
+  margin-right: -31px;
+}
+:host /deep/ .cal-day-headers {
+  padding: 0 !important;
+}
+:host /deep/ .cal-time-label-column {
+  display: none !important;
+}
+:host /deep/ .cal-events-row {
+  margin-left: 0 !important;
+  height: 45px !important;
+  padding: 1.5px 0;
+}
+:host /deep/ .cal-events-row::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-top: 0.7px dashed #dadfea;
+  width: 100%;
+  transform: translateY(-50%);
+}
+:host /deep/ .cal-day-headers {
+  border-left: none !important;
+}
+:host /deep/ .cal-all-day-events {
+  border-left: none !important;
+}
+:host /deep/ .cal-time-events {
+  border-left: none !important;
+}
+:host /deep/ * {
+  border-width: 0.7px !important;
+  border-color: #dfe2e5 !important;
+}
+:host /deep/ .cal-event {
+  border-radius: 24px 24px !important;
+  // background-color: !important;
+  height: 100% !important;
+}
+:host /deep/ .cal-today {
+  background-color: rgba(145, 174, 218, 0.1) !important;
+}
+:host /deep/ .cal-time-events {
+  display: none !important;
+}
+:host /deep/ .avatar-container {
+  padding: 5px;
+  border-radius: 24px;
+  .avatar {
+    background-color: #ffffff;
+    background-size: cover;
+    border-radius: 20px 20px;
+    width: 28px;
+    height: 28px;
+    margin-left: -10px;
+    font-size: 14px;
+    text-align: center;
+    color: #ca7300;
+    line-height: 32px;
+  }
+  .more-avatar {
+    text-align: center;
+    border-radius: 20px 20px;
+    width: 28px;
+    height: 28px;
+    margin-left: -10px;
+    background-color: #ffffff !important;
+  }
+}
+.popup-window {
+  border-radius: 3px;
+  background-color: #ffffff;
+}
+:host /deep/ .cal-events-row:nth-child(2n + 3) {
+  border-top: 0.7px solid #dadfea;
+  border-bottom: 0.7px solid #dadfea;
+}

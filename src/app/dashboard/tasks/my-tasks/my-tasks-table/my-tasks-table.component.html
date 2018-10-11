@@ -1,26 +1,18 @@
-<div class="d-flex">
-  <div class="box bordered task-types mr-4" style="min-width: 210px">
-    <h3 class="color-gray mb-4">Типы задач</h3>
-    <ul class="color-headings font-weight-500 pl-0">
-      <li class="mb-3 active">Промоактивности</li>
-      <li class="mb-3">Проверка долей</li>
-      <li class="mb-3">Сбор цен</li>
-      <li class="mb-3">Дополнительные</li>
-    </ul>
+<div *ngIf="!badRoute; else badRouteRef">
+  <div class="d-flex align-items-center justify-content-between mb-4">
+    <h2>{{typeName}}</h2>
+    <ui-filter-container>
+      <app-tasks-filter></app-tasks-filter>
+    </ui-filter-container>
   </div>
-  <div class="w-100 box-bordered" style="max-width: calc(100% - 225px);">
-    <div class="box p-5" style="min-height: 100%;">
-      <div class="d-flex align-items-center justify-content-between mb-4">
-        <h2>Все задачи</h2>
-        <el-button>
-          <i class="fas fa-filter"></i>
-          Фильтр
-        </el-button>
-      </div>
-      <div class="data-table-container mx--5" [el-loading]="isLoading()">
-        <ui-data-table class="data-table" emptyMessage="Задач нет" [displayedColumns]="displayedColumns" [dataSource]="tasks" *ngIf="displayedColumns.length > 0">
-        </ui-data-table>
-      </div>
-    </div>
+  <div class="data-table-container mx--5" [el-loading]="isLoading()">
+    <ui-tasks-data-table class="data-table" [taskType]="type" emptyMessage="Задач нет" [displayedColumns]="displayedColumns" [dataSource]="tasks" *ngIf="displayedColumns.length > 0">
+    </ui-tasks-data-table>
   </div>
 </div>
+
+<ng-template #badRouteRef>
+  <div>
+    <h2>Данной таблицы не существует</h2>
+  </div>
+</ng-template>

@@ -1,10 +1,9 @@
 <div class="box p-5">
   <div class="d-flex align-items-center justify-content-between mb-4">
     <h2>Все задачи</h2>
-    <el-button>
-      <i class="fas fa-filter"></i>
-      Фильтр
-    </el-button>
+    <ui-filter-container>
+      <app-abs-filter></app-abs-filter>
+    </ui-filter-container>
   </div>
   <app-task-table [rows]="rows" [loading]="loading" class="mx--5"></app-task-table>
 </div>

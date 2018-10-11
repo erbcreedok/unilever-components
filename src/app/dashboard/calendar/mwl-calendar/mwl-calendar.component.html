@@ -1,0 +1,41 @@
+<link href="https://unpkg.com/angular-calendar@0.26.0/css/angular-calendar.css" rel="stylesheet">
+<div class="box-limit">
+  <ng-template #modalContent let-close="close">
+    <div class="popup-window px-4 py-5">
+      <app-calendar-tasks [tasks]="modalEventTask.tasks"></app-calendar-tasks>
+      <ui-button class="default d-block mx-auto" (click)="close()" style="width: 150px">Закрыть</ui-button>
+    </div>
+  </ng-template>
+
+  <ng-template #customEventTemplate let-weekEvent="weekEvent">
+      <div class="cal-event" [style.background-color]="weekEvent.event.color.primary" (click)="openEvent(weekEvent.event)">
+        <div *ngIf="eventImages(weekEvent.event).length <= 3" class="avatar-container d-flex flex-row-reverse">
+          <div class="avatar"
+               *ngFor="let image of eventImages(weekEvent.event)"
+               [ngStyle]="{backgroundImage: 'url(' + image.url + ')'}">
+            {{ image.url ? '' : image.title }}
+          </div>
+        </div>
+        <div *ngIf="eventImages(weekEvent.event).length > 3" class="avatar-container d-flex flex-row-reverse">
+          <div class="avatar"
+               *ngFor="let image of eventImages(weekEvent.event)"
+               [ngStyle]="{backgroundImage: 'url(' + image.url + ')'}">
+            {{ image.url ? '' : image.title }}
+          </div>
+          <div class="more-avatar">+{{ eventImages(weekEvent.event).length - 2 }}</div>
+        </div>
+      </div>
+  </ng-template>
+  <div [ngSwitch]="view">
+    <mwl-calendar-week-view
+      *ngSwitchCase="CalendarView.Week"
+      [viewDate]="viewDate"
+      [events]="events"
+      [locale] = "locale"
+      [hourSegments]="0"
+      [hourSegmentHeight]="45"
+      [eventTemplate]="customEventTemplate"
+      [refresh]="refresh">
+    </mwl-calendar-week-view>
+  </div>
+</div>

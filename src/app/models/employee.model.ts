@@ -5,10 +5,10 @@ export interface EmployeeInterface {
     last_name: string;
     tasks_info: {
         all: number,
-        completed: number,
-        in_progress: number,
+        in_process: number,
         recheck: number,
-        fix: number
+        done: number,
+        not_done: number
     };
     position: {
         value: number,
@@ -20,6 +20,10 @@ export interface EmployeeInterface {
     doors: any[];
     phone: string;
     avatar: string;
+    status: {
+        value: number,
+        display: string
+    };
 }
 
 export class Employee {
@@ -29,10 +33,10 @@ export class Employee {
     public lastName: string;
     public tasksInfo: {
         all: number,
-        completed: number,
-        inProgress: number,
+        done: number,
+        notDone: number
+        inProcess: number,
         recheck: number,
-        fix: number
     };
     public position: {
         value: number,
@@ -44,6 +48,10 @@ export class Employee {
     public doors: any[];
     public phone: string;
     public avatar: string;
+    public status: {
+        value: number,
+        display: string
+    };
 
     constructor(employee: EmployeeInterface) {
         return employee ? this.setEmployee(employee) : null;
@@ -57,13 +65,13 @@ export class Employee {
         this.email = employee.email;
         this.firstName = employee.first_name;
         this.lastName = employee.last_name;
-        this.tasksInfo = {
+        this.tasksInfo = employee.tasks_info ? {
             all: employee.tasks_info.all,
-            completed: employee.tasks_info.completed,
-            inProgress: employee.tasks_info.in_progress,
+            done: employee.tasks_info.done,
+            inProcess: employee.tasks_info.in_process,
             recheck: employee.tasks_info.recheck,
-            fix: employee.tasks_info.fix,
-        };
+            notDone: employee.tasks_info.not_done,
+        } : null;
         this.position = employee.position;
         this.formalPosition = employee.formal_position;
         this.department = employee.department;
@@ -71,6 +79,7 @@ export class Employee {
         this.doors = employee.doors;
         this.phone = employee.phone;
         this.avatar = employee.avatar;
+        this.status = employee.status;
         return this;
     }
 
@@ -84,20 +93,21 @@ export class Employee {
             email: this.email,
             first_name: this.firstName,
             last_name: this.lastName,
-            tasks_info: {
+            tasks_info: this.tasksInfo ? {
                 all: this.tasksInfo.all,
-                completed: this.tasksInfo.completed,
-                in_progress: this.tasksInfo.inProgress,
+                done: this.tasksInfo.done,
+                in_process: this.tasksInfo.inProcess,
                 recheck: this.tasksInfo.recheck,
-                fix: this.tasksInfo.fix
-            },
+                not_done: this.tasksInfo.notDone
+            } : null,
             position: this.position,
             formal_position: this.formalPosition,
             department: this.department,
             brands: this.brands,
             doors: this.doors,
             phone: this.phone,
-            avatar: this.avatar
+            avatar: this.avatar,
+            status: this.status
         };
     }
 }
